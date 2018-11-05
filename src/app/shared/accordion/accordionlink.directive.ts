@@ -1,17 +1,22 @@
 import {
-  Directive, HostBinding, Inject, Input, OnInit, OnDestroy
-} from '@angular/core';
+  Directive,
+  HostBinding,
+  Inject,
+  Input,
+  OnInit,
+  OnDestroy
+} from "@angular/core";
 
-import { AccordionDirective } from './accordion.directive';
+import { AccordionDirective } from "./accordion.directive";
 
 @Directive({
-  selector: '[appAccordionLink]'
+  selector: "[appAccordionLink]"
 })
 export class AccordionLinkDirective implements OnInit, OnDestroy {
+  @Input()
+  public group: any;
 
-  @Input() public group: any;
-
-  @HostBinding('class.pcoded-trigger')
+  @HostBinding("class.pcoded-trigger")
   @Input()
   get open(): boolean {
     return this._open;
@@ -20,14 +25,14 @@ export class AccordionLinkDirective implements OnInit, OnDestroy {
   set open(value: boolean) {
     this._open = value;
     /*for slimscroll on and off*/
-    let cl = document.querySelector('.pcoded-inner-navbar');
-    
-    if(cl){
-      cl.classList.toggle('scroll-sidebar');
+    let cl = document.querySelector(".pcoded-inner-navbar");
+
+    if (cl) {
+      cl.classList.toggle("scroll-sidebar");
     }
 
     if (value) {
-        this.nav.closeOtherLinks(this);
+      this.nav.closeOtherLinks(this);
     }
   }
 
@@ -48,7 +53,11 @@ export class AccordionLinkDirective implements OnInit, OnDestroy {
 
   toggle(): any {
     /*for slimscroll on and off*/
-    document.querySelector('.pcoded-inner-navbar').classList.add('scroll-sidebar');
+    let pin = document.querySelector(".pcoded-inner-navbar");
+
+    if (pin) {
+      pin.classList.add("scroll-sidebar");
+    }
 
     this.open = !this.open;
   }
