@@ -1,0 +1,2503 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/payroll/home']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Run New Payroll
+                </h4>
+              </span>
+            </div>
+          </div>  
+          <div class="col-md-5"></div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page-body body-padding">
+  <div class="row">
+    <div class="col-sm-10 offset-md-1" style="margin-top: 150px !important;">      
+      <div class="card-header-all">
+          <div class="col-md-12 m-0 p-0">
+              <p class="float-left">Period Selection</p>
+              <p class="float-right">Step 1 of 6</p>
+          </div>
+      </div>
+      
+        <div class="justify-content-start">
+      <wizard #wizard class="arc-wizard" navBarLayout="large-filled-symbols">
+
+        <!-- fist wizard -->
+        <wizard-step stepTitle="Period Selection" navigationSymbol="" navigationSymbolFontFamily="FontAwesome" class="p-3"> 
+            <div class="row">
+                <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                  <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                  <button type="button" class="btn btn-light btn-sm header-button text-muted">Finish</button>
+                </div>
+            </div>  
+          
+            <div class="row">
+
+                <div class="col-md-12">
+  
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Payroll Name</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+  
+                  <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Select Period</label>
+                    <div class="col-sm-4">
+                        <select class="form-control select-border" name="period" [(ngModel)]="period" (change)="onChangePeriod()" style="border: 1px solid #959595;">
+                            <option value="" selected>--Select--</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary btn-sm header-button" [routerLink]="['/config/period-definition']">+ Add Period</button>
+                    </div>
+                  </div>
+  
+                  <!-- <ng-template *ngIf="showForm"> -->
+
+                    <div class="form-group row" *ngIf="showForm">
+                      <label class="col-sm-2 col-form-label">Year</label>
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="form-group row" *ngIf="showForm">
+                        <label class="col-sm-2 col-form-label">Pay Frequency</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row" *ngIf="showForm">
+                        <label class="col-sm-2 col-form-label">Period Range</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row" *ngIf="showForm">
+                        <label class="col-sm-2 col-form-label">Date</label>
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-md-5">
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-md-5">
+                                <input type="date" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" *ngIf="showForm">
+                        <label class="col-sm-2 col-form-label">Working Days</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row" *ngIf="showForm">
+                        <label class="col-sm-2 col-form-label">Total Hours</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row" *ngIf="showForm">
+                        <label class="col-sm-2 col-form-label">Fixed Days</label>
+                        <div class="col-sm-4">
+                          <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                  <!-- </ng-template> -->
+
+                </div>
+  
+                <div class="col-sm-12 mt-10 text-right float-lg-right">
+                  <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+                </div>  
+              </div>    
+        </wizard-step>
+
+        <!-- second wizard -->
+        <wizard-step stepTitle="Run for" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+          <div class="row">
+            <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+              <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+              <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+            </div>
+          </div>
+
+
+          <div class="row">
+
+              <div class="col-md-12">
+                  <squeezebox [multiple]="false">
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                        <sb-item-head class="accordion-heading accordion-msg">
+                          Branch
+                        </sb-item-head>
+                        <sb-item-body class="accordion-content">
+                          <div class="accordion-desc">
+              
+                            <div class="row mt-4">
+                              <div class="col-sm-9">
+                                <div>
+                                  <label class="label-control">
+                                    <select class="form-control hide-border" name="select">
+                                      <option value="opt1">Bulk Actions</option>
+                                      <option value="opt2">Delete</option>
+                                      <option value="opt2">Change</option>
+                                    </select>
+                                  </label>
+                                  <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                </div>
+                              </div>
+              
+              
+                              <div class="col-sm-3">
+                                <div class="form-group has-feedback has-search shadow">
+                                  <i class="fa fa-search form-control-feedback"></i>
+                                  <input type="search" class="form-control border-rm" placeholder="Search">
+                                </div>
+                              </div>
+                            </div>
+              
+              
+              
+                            <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                              [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+              
+              
+                              <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                [resizeable]="false">
+              
+                                <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                  let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                  <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                    <label class="container-checkbox">
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                        <span class="checkmark-checkbox"></span>
+                                    </label>
+                                  </div>
+                                </ng-template>
+              
+                                <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                  let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                  <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                    <label class="container-checkbox">
+                                      <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                      <span class="checkmark-checkbox"></span>
+                                    </label>
+                                  </div>
+                                </ng-template>
+                              </ngx-datatable-column>
+              
+              
+              
+                              <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                              <ngx-datatable-column name="Code" [width]="120">
+
+                              </ngx-datatable-column>
+
+                              <ngx-datatable-column name="Short Name" [width]="120">
+                                  <ng-template let-row="row" ngx-datatable-cell-template>
+                                      DA
+                                  </ng-template>
+                              </ngx-datatable-column>
+
+                              <ngx-datatable-column name="Long Name" [width]="120">
+                                  <ng-template let-row="row" ngx-datatable-cell-template>
+                                      Department A
+                                  </ng-template>
+                              </ngx-datatable-column>
+
+                              <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                  <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <a>
+                                      <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                    </a>  
+                                  </ng-template>
+                              </ngx-datatable-column>
+                              
+                            </ngx-datatable>
+                          </div>
+                        </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Division
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="search" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Department
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                         </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Section
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Sub-Section
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Location
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Job Title
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Criteria
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Level
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Occupation Group
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Business Unit
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Cost Center
+                            <!-- <button [routerLink]="" class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+                              <i class="fa fa-plus"></i>
+                              Add
+                            </button> -->
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+
+                      <sb-item [collapsed]="false" class="accordion-panel">
+                          <sb-item-head class="accordion-heading accordion-msg">
+                            Custom Group
+                          </sb-item-head>
+                          <sb-item-body class="accordion-content">
+                            <div class="accordion-desc">
+                
+                              <div class="row mt-4">
+                                <div class="col-sm-9">
+                                  <div>
+                                    <label class="label-control">
+                                      <select class="form-control hide-border" name="select">
+                                        <option value="opt1">Bulk Actions</option>
+                                        <option value="opt2">Delete</option>
+                                        <option value="opt2">Change</option>
+                                      </select>
+                                    </label>
+                                    <button type="button" class="btn btn-light btn-sm datatable-button shadow">Apply</button>
+                                  </div>
+                                </div>
+                
+                
+                                <div class="col-sm-3">
+                                  <div class="form-group has-feedback has-search shadow">
+                                    <i class="fa fa-search form-control-feedback"></i>
+                                    <input type="text" class="form-control border-rm" placeholder="Search">
+                                  </div>
+                                </div>
+                              </div>
+                
+                
+                
+                              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                
+                
+                                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                                  [resizeable]="false">
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                
+                                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                                      <!-- <label>
+                                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                      </label> -->
+                                      <label class="container-checkbox">
+                                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  </ng-template>
+                                </ngx-datatable-column>
+                
+                
+                
+                                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                                <ngx-datatable-column name="Code" [width]="120">
+  
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Short Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        DA
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column name="Long Name" [width]="120">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                        Department A
+                                    </ng-template>
+                                </ngx-datatable-column>
+  
+                                <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                                    <ng-template let-row="row" ngx-datatable-cell-template>
+                                      <a>
+                                        <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                                      </a>  
+                                    </ng-template>
+                                </ngx-datatable-column>
+                                
+                              </ngx-datatable>
+                            </div>
+                          </sb-item-body>
+                      </sb-item>
+                  </squeezebox>  
+              </div>
+
+              <div class="col-sm-12 mt-10 text-right float-lg-right">
+                <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+              </div>
+            </div>
+        </wizard-step>
+
+
+        <!-- Third wizard -->
+        <wizard-step stepTitle="Paycodes" navigationSymbol="" navigationSymbolFontFamily="FontAwesome" class="p-3">
+
+          <div class="row">
+            <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+              <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+              <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+            </div>
+          </div>
+
+
+          <div class="row">
+
+              <div class="col-sm-12">
+
+                  <div class="row">
+                      <label class="col-sm-3 col-form-label">Run Type</label>
+                      <div class="col-sm-9">
+                          <div style="display: flex;">
+                              <label class="container-radio">Normal Run
+                                <input type="radio" name="radio1" value="normal" (change)="onChangeRadioNormal()" [(ngModel)]="normal" checked="checked">
+                                <span class="checkmark-radio"></span>
+                              </label>
+                              <label class="container-radio">Special Run
+                                <input type="radio" name="radio1" value="special" [(ngModel)]="special" (change)="onChangeRadioSpecial()">
+                                <span class="checkmark-radio"></span>
+                              </label>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <label class="col-sm-3 col-form-label">Standard Paycodes</label>
+                      <div class="col-sm-2">
+                          <label class="container-checkbox" [ngClass]="{'text-muted':isDisabled === true}">BSC
+                              <input type="checkbox" checked [disabled]="isDisabled">
+                              <span class="checkmark-checkbox" [ngClass]="{
+                                'bg-secondary':isDisabled === true,
+                                'border-secondary':isDisabled === true
+                              }"></span>
+                          </label>
+                      </div>
+                      <div class="col-sm-2">
+                          <label class="container-checkbox" [ngClass]="{'text-muted':isDisabled === true}">BSC
+                              <input type="checkbox" checked="checked" [disabled]="isDisabled">
+                              <span class="checkmark-checkbox" [ngClass]="{
+                                'bg-secondary':isDisabled === true,
+                                'border-secondary':isDisabled === true
+                              }"></span>
+                          </label>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <label class="col-sm-3 col-form-label"></label>
+                      <div class="col-sm-2">
+                          <label class="container-checkbox" [ngClass]="{'text-muted':isDisabled === true}">OT1
+                              <input type="checkbox" checked="checked">
+                              <span class="checkmark-checkbox" [ngClass]="{
+                                'bg-secondary':isDisabled === true,
+                                'border-secondary':isDisabled === true
+                              }"></span>
+                          </label>
+                      </div>
+                      <div class="col-sm-2">
+                          <label class="container-checkbox" [ngClass]="{'text-muted':isDisabled === true}">OT1
+                              <input type="checkbox" checked="checked">
+                              <span class="checkmark-checkbox" [ngClass]="{
+                                'bg-secondary':isDisabled === true,
+                                'border-secondary':isDisabled === true
+                              }"></span>
+                          </label>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <label class="col-sm-3 col-form-label"></label>
+                      <div class="col-sm-2">
+                          <label class="container-checkbox" [ngClass]="{'text-muted':isDisabled === true}">BSN1
+                              <input type="checkbox" checked="checked">
+                              <span class="checkmark-checkbox" [ngClass]="{
+                                'bg-secondary':isDisabled === true,
+                                'border-secondary':isDisabled === true
+                              }"></span>
+                          </label>
+                      </div>
+                      <div class="col-sm-2">
+                        <!-- <input type="checkbox" class="">
+                        <label for="">OT1</label> -->
+                      </div>
+                  </div>
+
+                  <div class="row">
+                    <label class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-2">
+                        <label class="container-checkbox" [ngClass]="{'text-muted':isDisabled === true}">ML
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark-checkbox" [ngClass]="{
+                              'bg-secondary':isDisabled === true,
+                              'border-secondary':isDisabled === true
+                            }"></span>
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                      <!-- <input type="checkbox" class="">
+                      <label for="">OT1</label> -->
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <label class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-2">
+                        <label class="container-checkbox" [ngClass]="{'text-muted':isDisabled === true}">TA
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark-checkbox" [ngClass]="{
+                              'bg-secondary':isDisabled === true,
+                              'border-secondary':isDisabled === true
+                            }"></span>
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                      <!-- <input type="checkbox" class="">
+                      <label for="">OT1</label> -->
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <label class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-3">
+                      <input *ngIf="!isDisabled" type="button" class="btn btn-primary btn-sm header-button" value="+ Add Paycodes" (click)="modalDefault.show()">   
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+
+              </div>
+              
+
+              <div class="col-sm-12 mt-10 text-right float-lg-right">
+                <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+              </div> 
+          </div>
+        </wizard-step>
+
+
+        <!-- fourth wizard -->
+        <wizard-step stepTitle="Attendance" navigationSymbol="" navigationSymbolFontFamily="FontAwesome" class="p-3">
+          <div class="row">
+           
+            <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+              <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+              <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+            </div>
+          </div>
+
+
+          <div class="row">
+              <div class="col-md-12">
+
+
+                  <div class="row">
+                      <div class="col-sm-7"></div>      
+      
+                      <div class="col-sm-3">
+                        <div class="form-group has-feedback has-search shadow">
+                          <i class="fa fa-search form-control-feedback"></i>
+                          <input type="search" class="form-control no-border" placeholder="Search">
+                        </div>
+                      </div>
+
+                      <div class="col-sm-2">
+                          <button class="btn btn-success btn-sm header-button" (click)="modalDefault1.show()">Bulk Upload</button>
+                      </div>
+                  </div>
+
+
+
+                  <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                  [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+  
+  
+                  <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                    [resizeable]="false">
+  
+                    <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                      let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                      <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                        <!-- <label>
+                          <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                          <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                        </label> -->
+                        <label class="container-checkbox">
+                          <input type="checkbox">
+                          <span class="checkmark-checkbox"></span>
+                        </label>
+                      </div>
+                    </ng-template>
+  
+                    <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                      let-onCheckboxChangeFn="onCheckboxChangeFn">
+                      <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                        <!-- <label>
+                          <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                          <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                        </label> -->
+                        <label class="container-checkbox">
+                          <input type="checkbox">
+                          <span class="checkmark-checkbox"></span>
+                        </label>
+                      </div>
+                    </ng-template>
+                  </ngx-datatable-column>
+  
+  
+  
+                  <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                  <ngx-datatable-column name="Employee Code" [width]="140">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                          XYZ049
+                      </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Employee Name" [width]="150">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                          John Doe
+                      </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Working Days" [width]="130">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                          22
+                      </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Total Leaves" [width]="120">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                          11
+                      </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="LOP" [width]="80">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                          1
+                      </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Attendances" [width]="130">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                          19
+                      </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column [sortable]="false">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                        <a>
+                          <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" (click)="modalLightBox.show()" style="margin-left: 0px !important;">Edit</button>
+                        </a>  
+                      </ng-template>
+                  </ngx-datatable-column>
+                  
+                </ngx-datatable>
+
+
+              </div>
+
+              <div class="col-sm-12 mt-10 text-right float-lg-right">
+                <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+              </div>
+          
+            </div>
+        </wizard-step>
+
+
+
+        <!-- fifth wizard -->
+        <wizard-step stepTitle="Pay Adjustments" navigationSymbol="" navigationSymbolFontFamily="FontAwesome" class="p-3">
+          <div class="row">
+            
+            <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+              <button type="button" class="btn btn-primary btn-sm header-button" (click)="openConfirmsSwal()" nextStep >Save & Continue</button>
+              <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+            </div>
+          </div>
+
+
+          
+          <div class="row">
+
+              <div class="col-md-12">
+                  <div class="row" *ngIf="isAbpc">
+
+                      <div class="col-sm-7">
+                        <div class="row">
+
+                          <div class="col-sm-2">
+                            <label class="">Paycode</label>
+                          </div>
+
+                          <div class="col-sm-10">
+                              <label class="">
+                                  <select class="form-control" name="">
+                                    <option value="BSC">BSC</option>
+                                  </select>
+                              </label>
+                          </div>
+
+                        </div>
+
+
+                        <!-- <div>
+                          <label class="label-control mr-3">Paycode</label>
+                          <label class="label-control">
+                            <select class="form-control" name="select">
+                              <option value="BSC">BSC</option>
+                            </select>
+                          </label>
+                        </div> -->
+                      </div>
+              
+              
+                      <div class="col-md-5">
+                          <a class="btn btn-light float-right btn-sm" (click)="onClickAbec()">
+                            <i></i>
+                            Adjust by Employee Code
+                          </a>
+              
+                          <a class="btn btn-sm bg-dark float-right text-white" (click)="onClickAbpc()">
+                            <i></i>
+                            Adjust by Paycode
+                          </a>
+                      </div>
+                      
+                  </div>
+
+
+
+                  <div class="row" *ngIf="!isAbpc">
+
+                      <div class="col-sm-7">
+
+                          <div class="row">
+
+                              <div class="col-sm-2">
+                                <label class="">Employee</label>
+                              </div>
+    
+                              <div class="col-sm-10">
+                                  <label class="">                      
+                                      <div class="form-group has-feedback has-search">
+                                        <i class="fa fa-search form-control-feedback" style="left: 6%;"></i>
+                                        <input type="search" [(ngModel)]="filterQuery" class="form-control shadow border-rm" placeholder="Search">
+                                      </div>
+                                  </label>
+                              </div>
+    
+                          </div>
+
+                      </div>
+              
+              
+                      <div class="col-md-5">
+                          <a class="btn btn-sm bg-dark float-right text-white" (click)="onClickAbec()">
+                            <i></i>
+                            Adjust by Employee Code
+                          </a>
+              
+                          <a class="btn btn-light btn-sm float-right" (click)="onClickAbpc()">
+                            <i></i>
+                            Adjust by Paycode
+                          </a>
+                      </div>
+                      
+                  </div>
+              
+              
+                    
+                    <ngx-datatable *ngIf="isAbpc" class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                      [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+              
+              
+                      <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+              
+                        <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                          let-selectFn="selectFn">
+                          <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                            <!-- <label>
+                              <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                              <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                            </label> -->
+                            <label class="container-checkbox">
+                              <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                              <span class="checkmark-checkbox"></span>
+                            </label>
+                          </div>
+                        </ng-template>
+              
+                        <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                          let-onCheckboxChangeFn="onCheckboxChangeFn">
+                          <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                            <!-- <label>
+                              <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                              <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                            </label> -->
+                            <label class="container-checkbox">
+                              <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                              <span class="checkmark-checkbox"></span>
+                            </label>
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-column>
+              
+              
+              
+                      <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                      <ngx-datatable-column [width]="130" name="Employee Code">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            XYZ025
+                          </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Employee Name" [width]="130">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            John Doe
+                          </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Amount" [width]="100">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <input type="text" class="form-control form-control-sm" style="width: 75px" value="15000">
+                          </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+
+
+
+                    <ngx-datatable *ngIf="!isAbpc" class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                      [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+              
+              
+                      <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+              
+                        <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                          let-selectFn="selectFn">
+                          <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                            <!-- <label>
+                              <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                              <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                            </label> -->
+                            <label class="container-checkbox">
+                              <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)">
+                              <span class="checkmark-checkbox"></span>
+                            </label>
+                          </div>
+                        </ng-template>
+              
+                        <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                          let-onCheckboxChangeFn="onCheckboxChangeFn">
+                          <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                            <!-- <label>
+                              <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                              <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                            </label> -->
+                            <label class="container-checkbox">
+                              <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)">
+                              <span class="checkmark-checkbox"></span>
+                            </label>
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-column>
+              
+              
+              
+                      <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                      <ngx-datatable-column name="Employee Code" [width]="130">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            XYZ025
+                          </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="Employee Name" [width]="130">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            John Doe
+                          </ng-template>
+                      </ngx-datatable-column>
+
+                      <!-- <ngx-datatable-column name="Amount" [width]="100">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <input type="text" class="form-control form-control-sm" style="width: 75px" value="15000">
+                          </ng-template>
+                      </ngx-datatable-column> -->
+                      <!-- <ngx-datatable-column name="Taxable"></ngx-datatable-column> -->
+                      <!-- <ngx-datatable-column [width]="80" name="Hours"></ngx-datatable-column> -->
+                      <!-- <ngx-datatable-column name="Fixeddays"></ngx-datatable-column> -->
+                      <!-- <ngx-datatable-column [width]="80" [sortable]="false" name="">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn">View</button>
+                        </ng-template>
+                      </ngx-datatable-column> -->
+
+                      <ngx-datatable-column [width]="130" [sortable]="false" name="">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <button type="button" class="btn btn-light btn-sm table-action-btn header-button" (click)="modalLightBox1.show()">Edit</button>
+                        </ng-template>
+                      </ngx-datatable-column> 
+
+                    </ngx-datatable>
+
+              </div> 
+              
+              <div class="col-sm-12 mt-10 text-right float-lg-right">
+                <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+              </div> 
+          </div>                
+        </wizard-step>
+
+
+          <!-- Sixth wizard -->
+        <wizard-step stepTitle="Calculation" navigationSymbol="" navigationSymbolFontFamily="FontAwesome" class="p-5">
+            <div class="row">
+             
+              <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                  <button class="btn btn-default btn-sm ml-1 header-button default-border">
+                      Download
+                  </button>
+                  <button type="button" class="btn btn-success btn-sm header-button">Approve</button>
+                  <button type="button" class="btn btn-danger btn-sm header-button">Reject</button>
+                <button type="button" class="btn btn-primary btn-sm header-button" [routerLink]="['/payroll']">Finish</button> 
+              </div>
+
+            </div>
+  
+  
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                    [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+            
+                    <ngx-datatable-column name="Employee Code" [width]="130">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          XYZ001
+                        </ng-template>
+                    </ngx-datatable-column>
+                    
+                    <ngx-datatable-column name="Employee Name" [width]="130">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            John Doe
+                        </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="Earning" [width]="80">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            3000
+                        </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="Deduction" [width]="100">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            2000
+                        </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="Net Payables" [width]="100">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            28000
+                        </ng-template>
+                    </ngx-datatable-column>
+                    
+                    <ngx-datatable-column [width]="100" [sortable]="false" name="">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                        <a class="btn btn-light btn-sm datatable-button table-action-btn" [routerLink]="['/payroll/payslip']">
+                          View
+                        </a>
+                      </ng-template>
+                    </ngx-datatable-column>
+
+                  </ngx-datatable>
+                </div>              
+            </div>                
+        </wizard-step>
+
+      </wizard>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<app-modal-basic #modalDefault [dialogClass]="'modal-sm'" style="width:400px !important;">
+  <div class="app-modal-header">
+    <h4 class="modal-title mt-2 ml-2">
+      <img src="assets/images/plus.png" alt="" class="img-fliud pr-2">
+      Add Paycodes
+    </h4>
+    <button type="button" class="close basic-close mt-1 ml-2" (click)="modalDefault.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="app-modal-body">
+
+    <form action="">
+
+      <div class="form-group row">
+        <div class="col-sm-6">
+            <label class="container-checkbox success">BSC
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">BNS1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">BNS1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">BNS1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">BNS1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">BNS1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">BNS1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+        <div class="col-sm-6">
+            <label class="container-checkbox success">OT1
+                <input type="checkbox">
+                <span class="checkmark-checkbox"></span>
+            </label>
+        </div>
+      </div>
+
+    </form>
+
+
+  </div>
+  <div class="app-modal-footer">
+    <!-- <button type="button" class="btn btn-default ripple" (click)="modalDefault.hide()">Close</button> -->
+    <button class="btn btn-success ripple light header-button" (click)="modalDefault.hide()">Submit</button>
+  </div>
+</app-modal-basic>
+
+
+
+
+
+
+
+<app-modal-basic #modalLightBox [hideHeader]="true" [hideFooter]="true" [dialogClass]="'modal-lg'">
+    <div class="app-modal-body">
+      <button type="button" class="close basic-close-light-box" (click)="modalLightBox.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <div class="row m-b-5">
+        <div class="col-sm-3">
+          <p>Leaves</p>
+        </div>  
+        <div class="col-sm-3">
+          <p>Carry Forward</p>
+        </div>
+        <div class="col-sm-3">
+          <p>Entitlement</p>
+        </div>
+        <div class="col-sm-3">
+          <p>YTD Availed</p>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-12">
+
+            <div class="row">
+              <div class="col-sm-3">
+                  <p>Personal Leave</p>
+              </div>
+              <div class="col-sm-3">
+                  <p>
+                    <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                  </p>
+              </div>
+              <div class="col-sm-3">
+                  <p>
+                    <input type="text" class="form-control form-control-sm" style="width: 75px" value="02">
+                  </p>
+              </div>
+              <div class="col-sm-3">
+                  <p>
+                    <input type="text" class="form-control form-control-sm" style="width: 75px" value="04">
+                  </p>
+              </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <p>Casual Leave</p>
+                </div>
+                <div class="col-sm-3">
+                    <p>
+                      <input type="text" class="form-control form-control-sm" style="width: 75px" value="02">
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <p>
+                      <input type="text" class="form-control form-control-sm" style="width: 75px" value="05">
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                    <p>
+                      <input type="text" class="form-control form-control-sm" style="width: 75px" value="04">
+                    </p>
+                </div>
+              </div>
+
+
+              <div class="row">
+                  <div class="col-sm-3">
+                      <p>Sick Leave</p>
+                  </div>
+                  <div class="col-sm-3">
+                      <p>
+                        <input type="text" class="form-control form-control-sm" style="width: 75px">
+                      </p>
+                  </div>
+                  <div class="col-sm-3">
+                      <p>
+                        <input type="text" class="form-control form-control-sm" style="width: 75px">
+                      </p>
+                  </div>
+                  <div class="col-sm-3">
+                      <p>
+                        <input type="text" class="form-control form-control-sm" style="width: 75px">
+                      </p>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p>Personal Leave</p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>
+                          <input type="text" class="form-control form-control-sm" style="width: 75px">
+                        </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>
+                          <input type="text" class="form-control form-control-sm" style="width: 75px">
+                        </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>
+                          <input type="text" class="form-control form-control-sm" style="width: 75px">
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-success btn-sm header-button pull-right" (click)="modalLightBox.hide()">Finish</button>  
+                    </div>
+                </div>
+          </div>
+
+          
+
+      </div>
+
+    </div>
+</app-modal-basic>
+
+
+
+
+
+
+<app-modal-basic #modalDefault1>
+    <div class="app-modal-header">
+      <h4 class="modal-title">
+        <!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
+        Bulk Upload
+      </h4>
+      <button type="button" class="close basic-close" (click)="modalDefault1.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="app-modal-body">
+  
+  
+      <form action="javascript:">
+
+        <div class="form-group row">          
+          <div class="col-sm-12">
+            <p>As per our format, you need to first download the format and then fill it to upload back.</p>
+            <div class="row">
+                <div class="col-sm-5 offset-sm-1">
+                  <p>Step 1:</p>
+                  <button class="btn btn-inverse btn-outline-inverse btn-block ripple light">Download Format</button>
+                </div>
+                <div class="col-sm-5">
+                  <p>Step 2:</p>
+                  <button class="btn btn-info btn-block ripple light">Upload File</button>
+                </div>
+            </div> 
+          </div>
+        </div>
+  
+      </form>
+  
+  
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-success ripple light header-button" (click)="modalDefault1.hide()">Finish</button>
+    </div>
+</app-modal-basic>
+
+
+
+
+
+
+  <app-modal-basic #modalLightBox1 [hideHeader]="true" [hideFooter]="true" [dialogClass]="" style="z-index: 150">
+      <div class="app-modal-body">
+        <button type="button" class="close basic-close-light-box" (click)="modalLightBox1.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+  
+        <div class="row">
+          <div class="col-sm-4">
+            <p>Paycode</p>
+          </div>
+          <div class="col-sm-4">
+            <p>Type</p>
+          </div>
+          <div class="col-sm-4">
+            <p>Amount</p>
+          </div>
+        </div>
+  
+        <div class="row">
+            <div class="col-sm-12">
+  
+              <div class="row">
+                <div class="col-sm-4">
+                    <p>BSC</p>
+                </div>
+                <div class="col-sm-4">
+                    <p>
+                      Earning
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <p>
+                      <input type="text" class="form-control form-control-sm" style="width: 75px" value="02">
+                    </p>
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                  <div class="col-sm-4">
+                      <p>PT</p>
+                  </div>
+                  <div class="col-sm-4">
+                      <p>
+                        Casual Leave
+                      </p>
+                  </div>
+                  <div class="col-sm-4">
+                      <p>
+                        <input type="text" class="form-control form-control-sm" style="width: 75px" value="02">
+                      </p>
+                  </div>
+                </div>
+
+
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p>BSC</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                          Sick Leave
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                          <input type="text" class="form-control form-control-sm" style="width: 75px">
+                        </p>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="row">
+                      <div class="col-sm-4">
+                          <p>BSC</p>
+                      </div>
+                      <div class="col-sm-4">
+                          <p>
+                            Personal Leave
+                          </p>
+                      </div>
+                      <div class="col-sm-4">
+                          <p>
+                            <input type="text" class="form-control form-control-sm" style="width: 75px">
+                          </p>
+                      </div>
+                    </div>
+  
+  
+              
+  
+                  
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <button type="button" class="btn btn-success btn-sm header-button pull-right" (click)="modalLightBox1.hide()">Finish</button>  
+                      </div>
+                  </div>
+            </div>
+  
+            
+  
+        </div>
+  
+      </div>
+  </app-modal-basic>

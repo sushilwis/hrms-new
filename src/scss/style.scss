@@ -1,0 +1,739 @@
+/**
+Template Name: Material Able Admin Template
+Author: #
+Email: #
+File: style.css
+=============
+  == Table of Contents==
+	- Custom Css
+	- Generic classes
+		-	Margin, Padding, Font class, text align, position, floating, overflow, background class, text color, display class, boarder class
+	- Theme Elements
+		-	Accordion, Button, tabs, typography, buttons, box shadow, pagination, Basic card
+	- General Elements
+		-	Lable & Badges, Materialize general elements, Lables
+	- Pages
+		-   Progress bar, Chat , dark layout
+============= */
+// General theme contents
+
+@import '~bootstrap/scss/bootstrap';
+
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/general";
+@import "partials/generic";
+
+// Menu
+@import "partials/menu/menu";
+@import "partials/menu/horizontal-menu";
+
+// Important Theme elements
+@import "partials/theme-elements/button";
+@import "partials/theme-elements/form-elements";
+
+// Theme elements
+@import "partials/theme-elements/label-badges";
+
+// Tables
+@import "partials/tables/tables";
+
+// Other
+@import "partials/other/chat";
+@import "partials/other/progress-bar";
+
+// Responsive css
+@import "partials/responsive/responsive";
+
+// dark layout css
+// dark layout css
+@import "partials/dark";
+
+//angular custom
+@import "partials/custom";
+
+@import '~ngx-bar-rating/themes/br-default-theme';
+@import '~ngx-bar-rating/themes/br-bootstrap-theme';
+@import '~ngx-bar-rating/themes/br-fontawesome-theme';
+@import '~ngx-bar-rating/themes/br-fontawesome-o-theme';
+@import '~ngx-bar-rating/themes/br-horizontal-theme';
+@import '~ngx-bar-rating/themes/br-vertical-theme';
+@import '~ngx-bar-rating/themes/br-stars-theme';
+@import '~ngx-bar-rating/themes/br-movie-theme';
+@import '~ngx-bar-rating/themes/br-square-theme';
+
+@import '~angular-tree-component/dist/angular-tree-component.css';
+
+.pcoded-inner-content, .main-body .page-wrapper {
+    padding: 0px;
+}
+
+.page-header-title .fa-chevron-left{
+	color: #000000 !important;
+  }
+  .data-table datatable-header-cell .datatable-header-cell-label {
+    font-size: 13px;
+    font-weight: 600;
+}
+.page-header h4{
+	color: #000000 !important;
+}
+
+
+
+.datatable-header{
+  border: 0px solid #cccccc !important;
+  background: #ffffff;
+}
+.data-table datatable-header-cell + datatable-header-cell{
+  border-left: 0px solid #eceeef !important;
+}
+
+select.form-control:not([size]):not([multiple]) {
+	height: calc(2.10rem + 0px) !important;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px 1px #d9d9d9 !important;
+}
+
+.horizontal ul.steps-indicator{
+	position: absolute !important;
+	top:-160px !important;
+	width: 100% !important;
+	bottom: 100% !important;
+}
+.datatable-button{
+    font-size: 14px;
+    padding: 6px;
+    width: 127px;
+    border-radius: 6px;
+    margin-left: 16px;
+}
+
+.form-control {
+  border-radius: 6px !important;
+
+}
+
+.has-search .form-control-feedback {
+  right: initial;
+  left: 10%;
+  color: #ccc;
+  position: absolute;
+  top: 9px;
+}
+
+.has-search .form-control {
+  padding-right: 12px;
+  padding-left: 34px;
+  border: 0px !important;
+}
+
+// ###  header button  ###
+.header-button{
+  border-radius: 6px;
+  font-size: 14px;
+  width: 127px;
+  margin-right: 7px;
+  padding: 6px 0px 6px 0px;
+  font-weight: 500;
+}
+
+.header-button-2{
+  border-radius: 6px;
+  font-size: 14px;
+  width: 150px;
+  margin-right: 7px;
+  padding: 6px 0px 6px 0px;
+}
+
+
+.header-button-3{
+  border-radius: 6px;
+  font-size: 14px;
+  width: 150px;
+  margin-right: 7px;
+  padding: 6px 0px 6px 0px;
+}
+
+.header-button-3:hover{
+	background-color: none;
+}
+
+
+
+.default-border{
+	border: 1px solid;
+    color: black;
+}
+
+
+.shadow{
+	box-shadow: 0px 1px 3px 1px #d9d9d9 !important;
+}
+
+
+.border-rm {
+  border: none;
+}
+
+.table-action-btn{
+	background: #e1e1e1;
+}
+
+datatable-body.datatable-body{
+	    padding-top: 15px;
+}
+
+// datatable-body.datatable-body{
+// 	    padding-top: 15px;
+// }
+// datatable-header.datatable-header.ng-star-inserted{
+// 	box-shadow: 5px 2px 5px #d3d3d3;
+// }
+
+
+.datatable-header.ng-star-inserted{
+  box-shadow: 0px 1px 3px 1px #d9d9d9 !important;
+}
+.data-table .datatable-row-wrapper:nth-child(odd){
+	background: #fff;
+}
+.data-table .datatable-row-wrapper:nth-child(even){
+	background: #fff;
+}
+datatable-body-row.datatable-body-row.datatable-row-even.ng-star-inserted {
+    border-bottom: 1px solid #ccc;
+}datatable-body-row.datatable-body-row.datatable-row-odd.ng-star-inserted {
+    border-bottom: 1px solid #ccc;
+}
+ngx-datatable.data-table[_ngcontent-c12]{
+	background: none;
+}
+
+.btn.btn-outline-dark:hover {
+  background: none;
+}
+
+.headtext {
+  font-size: 1rem;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.headbackbtn {
+  font-size: 1rem;
+  margin-right: 43px;
+  margin-left: 5px;
+  margin-top: 6px;
+}
+
+
+.body-pad {
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+
+.body-top-margin {
+  margin-top: 150px;
+}
+
+.ng-tns-c6-3 {
+  display: none;
+}
+
+
+.ng-untouched.ng-pristine.ng-valid {
+  border: none;
+  width: 100%;
+} 
+
+div.ngb-dp-weekday.small.text-center.font-italic.ng-star-inserted, div.ngb-dp-day.ng-star-inserted {
+  width: 3.17rem;
+}
+
+select.custom-select {
+  border: none;
+  background: none;
+  font-size: 1.4rem;
+}
+
+.ngb-dp-week.ngb-dp-weekdays.bg-light.ng-star-inserted {
+  border: none;
+}
+
+
+div.btn-light.text-muted.outside.ng-star-inserted, div.btn-light.ng-star-inserted {
+  width: 3rem;
+  line-height: 3rem;
+}
+
+.ngb-dp-week.ng-star-inserted {
+  padding-top: .7rem;
+  // padding-top: .35rem;
+  // padding-bottom: .35rem;
+}
+
+.ng-valid.ng-touched.ng-dirty {
+  border: none;
+}
+
+
+datatable-body-row.datatable-body-row.datatable-row-even.ng-star-inserted, datatable-body-row.datatable-body-row.datatable-row-odd.ng-star-inserted {
+  border: none;
+}
+
+
+.cal-open-day-events.ng-tns-c6-4.ng-trigger.ng-trigger-collapse.ng-star-inserted, .cal-month-view.cal-open-day-events {
+  display: none;
+  padding: 0px;
+}
+
+
+// ###  upload button  ###
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-button {
+  border-radius: 5px;
+  font-size: 12px;
+  width: 120px;
+  // margin-right: 7px;
+  padding: 5px 0px 5px 0px;
+  // font-weight: 500;
+  cursor: pointer;
+}
+.upload-photo-two{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+.upload-btn-wrapper img{
+  cursor: pointer;
+}
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.form-control, .form-control input[type=text], .form-control input[type=date], input[type=text].form-control:focus, input[type=date].form-control:focus, input[type=text].form-control:hover, input[type=date].form-control:hover{
+  border: 1px solid #959595 !important;
+}
+
+select.form-control, select.form-control:focus, select.form-control:hover {
+  border: 0px;
+}
+
+textarea.form-control, textarea.form-control:focus, textarea.form-control:hover, textarea.form-control{
+  border: 1px solid #959595 !important;
+}
+
+textarea:focus, textarea:hover, input[type=text]:hover, input[type=text]:focus, input[type=date]:focus, input[type=date]:hover{
+  border: 1px solid #959595 !important;
+}
+
+input[type=search]:hover, input[type=search]:focus{
+  border: 0px solid #959595 !important;
+}
+
+// .hide-border, .hide-border:focus, .hide-border:hover {
+//   border: none;
+// }
+
+.cal-month-view.cal-open-day-events {
+  padding: 0px;
+}
+
+
+.borderless td, .borderless th {
+  border: none;
+}
+
+.accordion-msg {
+  border-top: none;
+  border-bottom: none;
+}
+
+.circle-font {
+  font-size: 5rem; 
+}
+
+.report-ico-font {
+  font-size: 2.5rem;
+  display: block;
+}
+
+
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn.active:focus,.btn.active.focus {
+    outline: none;
+    border: none;
+}
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="button"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgba(126, 239, 104, 0.8);
+  // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+  box-shadow: none;
+  outline: 0 none;
+  border: none;
+}
+
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+
+// ###  breadcrubm css and position###
+.header-boxshadow{
+    box-shadow: 0px 1px 3px 1px #d9d9d9 !important;
+    position: fixed;
+    width: 94%;
+    z-index: 99;
+}
+
+.body-padding {
+  padding-top: 110px; 
+  padding-left: 20px; 
+  padding-right: 20px;
+}
+
+
+
+.horizontal.large-filled-symbols ul.steps-indicator li:after {
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 25px);
+    width: 40px !important;
+    height: 40px !important;
+    content: '';
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    transition: 0.25s;
+    border-radius: 100%;
+    background-color: #E6E6E6;
+    color: black;
+    content: attr(step-symbol);
+    border: 10px solid #fff !important;
+    box-shadow: 1px 2px 5px #e0e0e0 !important;
+}
+.arc-wizard .large-filled-symbols ul.steps-indicator li.current:after, .arc-wizard .large-filled-symbols ul.steps-indicator li.editing:after {
+    background-color: #e0e0e0 !important;
+    color: #fff !important;
+}
+.horizontal.large-filled-symbols ul.steps-indicator li:not(:last-child):before {
+	background-color: #E6E6E6;
+	content: '';
+	position: absolute;
+	height: 1px;
+	width: calc(100% - 50px);
+	top: -30px !important;
+	left: calc(50% + 20px) !important;
+}
+.horizontal ul.steps-indicator li div a{
+  text-transform: capitalize !important;
+  font-weight: 500 !important;
+}
+
+.position{
+  position: fixed;
+  top: 3%;
+  right: 0%;
+  z-index: 99;
+}
+
+.arc-wizard .wizard-steps{
+  border:0px !important;
+
+}
+
+.modal-header {
+  border-bottom: 0px solid #e9ecef !important;
+}
+.modal-footer{
+  border-top: 0px solid #e9ecef !important;
+}
+
+.modal-title {
+  font-size: 17px !important;
+  color: #3db5f7 !important;
+  font-weight: 500 !important;
+}
+
+.data-table datatable-body-cell + datatable-body-cell{
+  border-left:0px solid #eceeef !important;
+}
+
+.modal-body{
+  padding: 1rem 2.5rem !important;
+}
+.col-form-label{
+  font-weight: 400;
+}
+
+
+
+
+.container-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark-checkbox {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.container-checkbox:hover input ~ .checkmark-checkbox {
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-checkbox input:checked ~ .checkmark-checkbox {
+  background-color: #28a745;
+  border: 1px solid #28a745;	
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-checkbox input:checked ~ .checkmark-checkbox:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-checkbox .checkmark-checkbox:after {
+  left: 3px;
+  top: 0px;
+  width: 7px;
+  height: 11px;
+  border: solid white;
+  border-width: 0px 3px 3px 0px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.container-radio {
+  display: block;
+  position: relative;
+  padding-left: 23px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 15px
+}
+
+/* Hide the browser's default radio button */
+.container-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark-radio {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container-radio:hover input ~ .checkmark-radio {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container-radio input:checked ~ .checkmark-radio {
+  background-color: #28a745;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark-radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container-radio input:checked ~ .checkmark-radio:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container-radio .checkmark-radio:after {
+top: 3px;
+left: 3px;
+width: 7px;
+height: 7px;
+border-radius: 50%;
+background: white;
+}
+
+
+.card-header-all{
+  background: #ffffff;
+  padding: 10px 20px;
+  position: absolute;
+  margin-bottom: 10px;
+  width: 97%;
+  top: -50px;
+  box-shadow: 0px 1px 3px 1px #d9d9d9;
+}
+
+.card{
+  margin-bottom: 10px !important;
+}
+.card-header-all p{
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.logo-drop-zone{
+  background: #e2e2e2 !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  color: #666 !important;
+  margin-bottom: 0px !important;
+}
+
+.upload-photo{
+  background: #999999;
+  width: 100%;
+  font-size: 12px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 5px;
+  text-align: center;
+}
+
+.md-tabs .nav-item a{
+  padding: 10px 0 !important;
+}
+.md-tabs .nav-item{
+  flex: none !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.justify-content-start{
+  background: #ffffff !important;
+}
+
+.ngb-dp-month-name{
+  color: #2196F3 !important;
+}
+
+datatable-row-wrapper{
+  width: 100% !important;
+}
+.badge-top-right{
+  right: -10px !important;
+  
+}
+
+.apply-btn, .apply-btn:focus, .apply-btn:active, .apply-btn:active {
+  background: #ffffff !important;
+  padding: 0px 20px !important;
+  border-radius: 4px !important;
+  border:0px;
+  margin-left: 20px;
+  outline: none;
+  height: 30px;
+}
+
+.badge {
+  border-radius: 50% !important;
+  padding: 7px 7px !important;
+}
+
+.badge-default {
+  background: #ffffff;
+  box-shadow: 0px 0px 2px 0px #e0e0e0 !important
+}
+
+
+.morebutton{
+  position: relative;
+    top: 13px;
+    right: 14px;
+}
+.morebutton2{
+  position: relative;
+    top: 9px;
+    right: 14px;
+}
+
+
+
+
+.accordion-msg{
+  border-bottom: 1px solid #ddd !important
+}
+

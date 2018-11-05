@@ -1,0 +1,224 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <div class="page-header-title">
+            <span>
+              <h4 class="m-b-10 headtext">
+                <a class="h4" [routerLink]="['/config/home']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Period Definition
+              </h4>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-5">          
+          <button class="btn btn-success float-right btn-sm ml-1 header-button" [routerLink]="['/config/home']">
+            <i></i>
+            Finish
+          </button>
+          <button class="btn btn-primary float-right btn-sm ml-1 header-button" (click)="modalDefault.show()">
+            <i></i>
+            + Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="page-body body-padding" >
+  <div class="container">
+    <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-sm-9">
+          <div>
+            <!-- <label class="label-control">Show
+                  <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select>
+                  entries
+                </label> -->
+            <label class="label-control">
+              <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select> -->
+              <select class="form-control no-border" name="select">
+                <option value="opt1">Bulk Actions</option>
+                <option value="opt2">Delete</option>
+                <option value="opt2">Change</option>
+              </select>
+              <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+            </label>
+            <button type="button" class="btn btn-light datatable-button shadow no-border">Apply</button>
+          </div>
+        </div>
+
+
+
+        <div class="col-sm-3">
+          <div class="form-group has-feedback has-search">
+            <i class="fa fa-search form-control-feedback"></i>
+            <input type="search" [(ngModel)]="filterQuery" class="form-control shadow no-border" placeholder="Search">
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+        [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+
+
+        <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+
+          <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+            let-selectFn="selectFn">
+            <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+              <label>
+                <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+              </label>
+            </div>
+          </ng-template>
+
+          <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+            let-onCheckboxChangeFn="onCheckboxChangeFn">
+            <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+              <label>
+                <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+              </label>
+            </div>
+          </ng-template>
+        </ngx-datatable-column>
+
+
+
+        <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+        <ngx-datatable-column [width]="80" name="Period"></ngx-datatable-column>
+        <ngx-datatable-column [width]="80" name="Startdate"></ngx-datatable-column>
+        <ngx-datatable-column [width]="80" name="Enddate"></ngx-datatable-column>
+        <ngx-datatable-column [width]="80" name="Workdays"></ngx-datatable-column>
+        <ngx-datatable-column [width]="80" name="Hours"></ngx-datatable-column>
+        <ngx-datatable-column [width]="80" name="Fixeddays"></ngx-datatable-column>
+        <ngx-datatable-column [width]="80" [sortable]="false" name="">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button type="button" class="btn btn-light btn-sm header-button table-action-button table-action-btn" >View</button>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [width]="80" [sortable]="false" name="">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button type="button" class="btn btn-light btn-sm header-button table-action-btn">Edit</button>
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+
+
+
+
+<app-modal-basic #modalDefault>
+  <div class="app-modal-header">
+    <h4 class="modal-title">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Add Period Definition
+    </h4>
+    <button type="button" class="close basic-close" (click)="modalDefault.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="app-modal-body">
+
+
+    <form action="javascript:">
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Year</label>
+        <div class="col-sm-9">
+          <select class="form-control">
+            <option value="">--Select--</option>
+        </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Pay Frequency</label>
+        <div class="col-sm-9">
+          <select class="form-control">
+            <option value="">--Select--</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Period</label>
+        <div class="col-sm-9">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Date</label>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-6"><input class="form-control" type="date"></div>
+            <div class="col-sm-6"><input class="form-control" type="date"></div>
+          </div>          
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Working Days</label>
+        <div class="col-sm-9">
+          <select class="form-control">
+            <option value="">--Select--</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Total Hours</label>
+        <div class="col-sm-9">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Fixed Days</label>
+        <div class="col-sm-9">
+          <select class="form-control">
+            <option value="">--Select--</option>
+        </select>
+        </div>
+      </div>
+
+      <p>
+        *All fields are compulsory
+      </p>
+
+    </form>
+
+
+  </div>
+  <div class="app-modal-footer">
+    <!-- <button type="button" class="btn btn-default ripple" (click)="modalDefault.hide()">Close</button> -->
+    <button type="button" class="btn btn-success ripple light">Submit</button>
+  </div>
+</app-modal-basic>

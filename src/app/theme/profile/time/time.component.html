@@ -1,0 +1,234 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+  
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/employees/home']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  John Doe
+                </h4>
+              </span>
+            </div>
+          </div>  
+  
+          <div class="col-md-5">
+            <a class="btn btn-light float-right btn-sm header-button" [routerLink]="['/profile/edit']">
+              <i></i>
+              Edit
+            </a>
+          </div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page-body">
+    <div class="container body-pad">
+      <div class="row">
+
+        <div class="col-sm-3 body-top-margin">
+            <div class="text-center p-3" style="background: #ffffff;">
+              <img src="assets/images/avatar-4.jpg" alt="" class="img-100 rounded">
+            </div>
+
+            <div class="text-center p-3" style="background: #ffffff;">
+                <p class="mb-1"><strong>Name : John Doe</strong></p>
+                <p class="mb-1"><strong>Code : XYZ123</strong></p>
+                <p class="mb-1"><strong>Division : A</strong></p>
+                <p class="mb-1"><strong>Designation : Manager</strong></p>
+                <p class="mb-1"><strong>Department : Sales</strong></p>
+                <p class="mb-1"><strong>Location : Mumbai</strong></p>
+                <p><strong>Mobile : +91 9876589745</strong></p>
+            </div>
+        </div>
+
+        
+        <div class="col-sm-9 body-top-margin">
+          <!-- <app-card> -->
+
+            <div class="md-tabs">
+                  <div class=" border-bottom mb-3" style="background:#ffffff;">
+                    <div class="col-sm-12 row">
+                      <div class="col-sm-2 p-3">
+                        <a [routerLink]="['/profile/home']">Personal</a>
+                      </div>
+    
+                      <div class="col-sm-2 p-3">
+                          <a [routerLink]="['/profile/home']">Professional</a>
+                      </div>
+    
+                      <div class="col-sm-2 p-3">
+                          <a [routerLink]="['/profile/home']">Insurence/Tax</a>
+                      </div>
+    
+                      <div class="col-sm-2 p-3">
+                          <a [routerLink]="['/profile/home']">Allocation</a>
+                      </div>
+    
+                      <div class="col-sm-2 p-3">
+                          <a [routerLink]="['/profile/home']">Permissions</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+
+            <div class="row"> 
+              
+              <div class="col-sm-12">
+                <div class="mb-3 p-3" style="background: #ffffff;">
+                    <a class="btn bg-dark btn-sm text-white header-button" [routerLink]="['/profile/time/in-out-details']">
+                      <i></i>
+                      In/Out Details
+                    </a>
+        
+                    <a class="btn btn-sm btn-light header-button" [routerLink]="['/profile/time/overtime-details']">
+                      <i></i>
+                      Overtime Details
+                    </a>
+
+                    <a class="btn btn-sm btn-light header-button" [routerLink]="['/profile/time/labour-hours']">
+                      <i></i>
+                      Labour Hours
+                    </a>
+                </div> 
+              </div>
+
+
+
+              <div class="col-sm-12">
+                <div style="background: #ffffff;" class="p-3">
+                  <div class="row mt-3">
+                      <div class="col-sm-3">
+                        <p>Leave*</p>
+                      </div>
+                      <div class="col-sm-5">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <input type="date" class="form-control">
+                          </div>
+                          <div class="col-sm-6">
+                            <input type="date" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4"></div>
+                  </div> 
+
+                  <div class="row mt-3">
+                      <div class="col-sm-3">
+                        <p>Summary</p>
+                      </div>
+
+                      <div class="col-sm-5">
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <p>Late</p>
+                          </div>
+                          <div class="col-sm-5">
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="col-sm-3">
+                            <p>Days</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4"></div>
+                  </div>    
+
+
+                  <div class="row mt-3">
+                      <div class="col-sm-3">
+                          <p></p>
+                      </div>
+  
+                        <div class="col-sm-5">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <p>Early Leave</p>
+                            </div>
+                            <div class="col-sm-5">
+                              <input type="text" class="form-control">
+                            </div>
+                            <div class="col-sm-3">
+                              <p>Days</p>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div class="col-sm-4"></div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="col-sm-12">
+
+                  <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                  [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+          
+                  <ngx-datatable-column name="Date" [width]="120">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                      01/02/2018
+                    </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Check in" [width]="110">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                      10:00
+                    </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Check out" [width]="110">
+                    <ng-template let-row="row" ngx-datatable-cell-template>
+                      06:00
+                    </ng-template>
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Late" [width]="110">
+                      <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                          20 min
+                      </ng-template> -->
+                  </ngx-datatable-column>
+
+                  <ngx-datatable-column name="Early Leave" [width]="110">
+                      <ng-template let-row="row" ngx-datatable-cell-template>
+                          30 min
+                      </ng-template>
+                  </ngx-datatable-column>
+
+                  </ngx-datatable>
+              </div>
+            </div>    
+
+            <div style="position: absolute; top:0; right: 14px;">
+              <div ngbDropdown class="dropdown-primary">
+                  <a ngbDropdownToggle class="morebutton">More </a>
+                  <div ngbDropdownMenu>
+                    <a class="dropdown-item ripple light">Salary</a>
+                    <a class="dropdown-item ripple light" [routerLink]="['/profile/time/in-out-details']">Time</a>
+                    <a class="dropdown-item ripple light" [routerLink]="['/profile/leave']">Leave</a>
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <a class="dropdown-item ripple light" [routerLink]="['/profile/attendance']">Attendance</a>
+                  </div>
+  
+              </div>
+            </div>
+          <!-- </app-card> -->
+        </div> 
+
+      </div>
+    </div>
+</div>

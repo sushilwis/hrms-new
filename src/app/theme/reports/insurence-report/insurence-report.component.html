@@ -1,0 +1,95 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/reports']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Insurence Report
+                </h4>
+              </span>
+            </div>
+          </div> 
+
+  
+          <div class="col-md-5">
+            <a class="btn btn-success btn-sm float-right header-button text-white">
+              Download Report
+            </a>
+          </div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page-body">
+    <div class="container body-pad">
+      <div class="row">
+          <div class="col-sm-12 body-top-margin">
+              <app-card>
+                <div class="row">                  
+
+                    <div class="col-sm-2 align-middle">
+                      <p>Date</p>
+                    </div>
+
+                    <div class="col-sm-4 align-middle">
+                      <div class="row">
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control">
+                        </div>
+                      </div>                      
+                    </div>
+
+                    <div class="col-sm-2 align-middle">
+                      <a class="btn btn-success btn-sm float-right header-button text-white">
+                        Generate
+                      </a>
+                    </div>                  
+                </div>
+              </app-card>            
+          </div>
+
+          
+
+
+          <div class="col-sm-12">
+            <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+          [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+  
+              <ngx-datatable-column name="Download History" [width]="120">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  02/02/2018
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <button type="button" class="btn btn-success btn-sm datatable-button" style="margin-left: 0px !important;">Download</button>
+                </ng-template>
+              </ngx-datatable-column>
+
+            </ngx-datatable>
+          </div>
+
+      </div>
+    </div>
+</div>          
+
+
+
+
+

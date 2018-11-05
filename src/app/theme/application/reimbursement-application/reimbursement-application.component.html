@@ -1,0 +1,158 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/application/home']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Reimbursement Application
+                </h4>
+              </span>
+            </div>
+          </div>  
+  
+          <div class="col-md-5">
+            <a class="btn btn-success float-right btn-sm header-button" [routerLink]="['/application/home']">
+              <i></i>
+              Apply
+            </a>
+          </div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page-body">
+    <div class="container body-pad">
+      <div class="row">
+
+
+
+
+        <div class="col-sm-7 body-top-margin">
+          <app-card>
+            <div class="m-4">
+
+            <div class="row mb-3">
+              <div class="col-sm-3">
+                <p>Claim Type*</p>
+              </div>
+              <div class="col-sm-9">
+                <select class="form-control">
+                    <option value="">--Select--</option>
+                    <option>Option-1</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-3">
+                  <p>Date*</p>
+                </div>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control"> 
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control"> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-3">
+                  <p>Time*</p>
+                </div>
+                <div class="col-sm-9">
+                  <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="From"> 
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="To"> 
+                    </div>
+                  </div>                                      
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-3">
+                  <p>Amount*</p>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control">                         
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-3">
+                  <p>Remark</p>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control">                         
+                </div>
+            </div>
+
+            <!-- <div class="row mb-3">
+                <div class="col-sm-3">
+                  <p>Substitute</p>
+                </div>
+                <div class="col-sm-9">
+                    <select class="form-control">
+                        <option value="">--Select--</option>
+                        <option>Option-1</option>
+                    </select>                                   
+                </div>
+            </div> -->
+
+            <div class="row">
+                <div class="col-sm-3">
+                  <p>Attachments*</p>
+                </div>
+                <div class="col-sm-9">
+                  <div class="upload-btn-wrapper">
+                    <button class=" btn btn-primary upload-button">Choose File</button>
+                    <input type="file" name="myfile" />
+                  </div>                                  
+                </div>
+            </div>
+
+          </div>
+          </app-card>
+        </div>
+
+
+
+
+        <div class="col-sm-5 body-top-margin">
+          <app-card>
+            <div class="w-100">
+                <!-- <h4 class="sub-title">Simple Inline</h4> -->
+                <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next" [displayMonths]="displayMonths" [navigation] = "arrows"></ngb-datepicker>
+                <!-- <pre class="m-t-20">Selected Month/Year: {{ date.month }}/{{ date.year }}</pre> -->
+                <!-- <pre>Selected Date: {{ parserFormatter.format(model) }}</pre> -->
+            </div>
+          </app-card>
+        </div>
+
+
+
+        
+      </div>
+    </div>
+</div>
+
+
+

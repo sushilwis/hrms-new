@@ -1,0 +1,128 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+
+
+        <div class="col-md-7">
+          <div class="page-header-title">
+            <span>
+              <h4 class="m-b-10 headtext">
+                <a class="" [routerLink]="['/config/home']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Administrator Accounts
+              </h4>
+            </span>
+          </div>
+        </div>
+
+
+        <div class="col-md-5">          
+          <a class="btn btn-success float-right btn-sm ml-1 header-button" [routerLink]="['/config/home']">
+            <i></i>
+            Finish
+          </a>
+          <a class="btn btn-primary float-right btn-sm ml-1 header-button" [routerLink]="['/config/admin-account/add']">
+            <i></i>
+            + Add
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="page-body body-padding">
+  <div class="container body-pad">
+  <!-- bug list card start -->
+  
+    <div class="dt-responsive">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9">
+          <div>
+            <label class="label-control">
+              <select class="form-control no-border" name="">
+                <option value="opt1">Bulk Action</option>
+                <option value="opt2">Delete</option>
+                <option value="opt2">Change</option>
+              </select>
+            </label>
+            <button type="button" class="apply-btn shadow">Apply</button>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-xs-12 col-sm-3 col-md-3">
+          <div class="form-group has-feedback has-search shadow">
+            <i class="fa fa-search form-control-feedback"></i>
+            <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm no-border" placeholder="Search">
+          </div>
+        </div>
+      </div>
+
+
+      <ngx-datatable class="data-table dt-chk fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+        [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+
+
+        <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+
+          <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+            let-selectFn="selectFn">
+            <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+              <!-- <label>
+                <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)"/>
+                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+              </label> -->
+              <label class="container-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark-checkbox"></span>
+              </label>
+            </div>
+          </ng-template>
+
+          <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+            let-onCheckboxChangeFn="onCheckboxChangeFn">
+            <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+              <label>
+                <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+              </label>
+            </div>
+          </ng-template>
+
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column name="Name"></ngx-datatable-column>
+        <ngx-datatable-column name="Rights"></ngx-datatable-column>
+        <ngx-datatable-column name="Permissions"></ngx-datatable-column>
+        <ngx-datatable-column [sortable]="false" name="Active/Deactive" prop="address.city">
+            Active/Deactive
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <div class="border-checkbox-group border-checkbox-group-default">
+              <input class="border-checkbox" type="checkbox" id="checkbox0">
+              <label _ngcontent-c5="" class="border-checkbox-label" for="checkbox1"></label>
+            </div>
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

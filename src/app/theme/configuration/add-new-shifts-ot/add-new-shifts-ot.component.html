@@ -1,0 +1,581 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-9">
+          <div class="page-header-title">
+            <span>
+              <h4 class="m-b-10 headtext">
+                <a class="h4" [routerLink]="['/config/create-shifts-overtime']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Add New Shifts/OT
+              </h4>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="page-body body-padding">
+  <div class="row">
+    <div class="col-sm-10 offset-md-1" style="margin-top: 160px !important;">
+        
+        <div class="card-header-all">
+            <div>
+              <p class="float-left">Details</p>
+              <p class="float-right">Step 1 of 5</p>
+            </div>
+
+            <!-- <div class="col-sm-10 offset-sm-2 text-right float-lg-right position"> -->
+              <!-- <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button> -->
+              <!-- <button type="button" class="btn btn-success btn-disabled btn-sm header-button">Finish</button> -->
+            <!-- </div> -->
+          </div>
+
+    <app-card [cardOptionBlock]="true">
+      <wizard #wizard class="arc-wizard" navBarLayout="large-filled-symbols">
+
+
+        <wizard-step stepTitle="Details" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <form action="">
+                <div class="form-group row">
+                  <div class="col-sm-11 offset-md-1 text-right float-lg-right position">
+                    <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                    <button type="button" class="btn btn-light btn-disabled btn-sm header-button">Finish</button>
+                  </div>
+                </div>
+      
+                <div class="row">
+                  <div >
+                    <form action="">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Shift Code*</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Shift Name*</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+      
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Time*</label>
+                        <div class="col-sm-9">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <input type="text" class="form-control">
+                            </div>
+                            <div class="col-sm-6">
+                              <input type="text" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+      
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Shift Type</label>
+      
+                        <div class="col-sm-9">
+                          <div style="display: flex;">
+                              <label class="container-radio">Standard
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark-radio"></span>
+                              </label>
+                              <label class="container-radio">Overtime
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark-radio"></span>
+                              </label>
+                          </div>
+                        </div>
+      
+                      </div>
+      
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Grace Period*</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+      
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Shift Category*</label>
+                        <div class="col-sm-9">
+                          <select name="select" class="form-control form-control-primary" data-role="multiselect">
+                            <option value="opt1">Morning</option>
+                            <option value="opt2">Evening</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+      
+                  <div class="col-md-3"></div>      
+      
+                </div>
+              </form>
+            </div>
+
+            <div class="col-sm-12 mt-10 text-right float-lg-right">
+              <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+            </div>
+          </div>  
+        </wizard-step>
+      
+      
+        <wizard-step stepTitle="Breaks" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+                <div class="row">
+                  <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                    <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                    <button type="button" class="btn btn-success btn-disabled btn-sm header-button">Finish</button>
+                  </div>
+                </div>
+      
+      
+                <div class="row">
+      
+                  <div class="col-sm-12">
+                    <div class="row">
+                      <div class="col-sm-9">
+                        <div>
+      
+                          <label class="label-control">
+                            <select class="form-control no-border" name="select">
+                              <option value="opt1">Bulk Actions</option>
+                              <option value="opt2">Delete</option>
+                              <option value="opt2">Change</option>
+                            </select>
+                          </label>
+      
+                          <button type="button" class="btn btn-light datatable-button  no-border shadow">Apply</button>
+      
+                        </div>
+                      </div>
+      
+      
+                      <div class="col-sm-3">
+                          <!-- <div class="form-group has-feedback has-search">
+                            <i class="fa fa-search form-control-feedback"></i>
+                            <input type="text" [(ngModel)]="filterQuery" class="form-control shadow" placeholder="Search">
+                          </div> -->
+                          <button type="button" class="btn btn-primary btn-sm header-button pull-right" (click)="modalDefault.show()">+ Add Breaks</button>
+                      </div>
+
+                    </div>
+      
+      
+      
+                    <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                      [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+      
+      
+                      <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                        [resizeable]="false">
+      
+                        <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                          let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                          <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                  
+                            <label class="container-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark-checkbox"></span>
+                            </label>
+
+                          </div>
+                        </ng-template>
+      
+                        <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                          let-onCheckboxChangeFn="onCheckboxChangeFn">
+                          <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+
+                            <label class="container-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark-checkbox"></span>
+                            </label>
+                            
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-column>
+      
+      
+                      <ngx-datatable-column name="Name"></ngx-datatable-column>
+                      <ngx-datatable-column name="Type"></ngx-datatable-column>
+                      <ngx-datatable-column name="Total Time">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <label>60 min</label>
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="Deductible"></ngx-datatable-column>
+      
+                      <ngx-datatable-column [sortable]="false" name="">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <button type="button" class="btn btn-sm btn-light">Edit</button>
+                        </ng-template>
+                      </ngx-datatable-column>
+      
+                      <ngx-datatable-column [sortable]="false" name="">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                          <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>
+                  </div>
+      
+                  <div class="col-sm-12 btn-group mt-10">
+                    <button type="button" class="btn btn-primary btn-sm float-right header-button" nextStep>Save & Continue</button>
+                  </div>
+                </div>
+        </wizard-step>      
+      
+      
+        <wizard-step stepTitle="Calculation" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+                <div class="row">
+                 
+                  <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                      <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                      <button type="button" class="btn btn-disabled btn-sm header-button">Finish</button>
+                  </div>
+                </div>
+      
+      
+                <div class="row">
+                  <!-- <div class="col-md-2"></div> -->
+      
+                  <div class="col-md-7 ml-4">
+                    <form action="">
+                      
+
+                      <label class="container-checkbox">Calculate Absence
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark-checkbox"></span>
+                      </label>
+
+                      <label class="container-checkbox">Calculate Tardiness
+                          <input type="checkbox">
+                          <span class="checkmark-checkbox"></span>
+                      </label>
+
+                      <label class="container-checkbox">Calculate Undertime
+                          <input type="checkbox">
+                          <span class="checkmark-checkbox"></span>
+                      </label>
+                      
+                      <label class="container-checkbox">Calculate Unscheduled Breaks
+                          <input type="checkbox">
+                          <span class="checkmark-checkbox"></span>
+                      </label> 
+                      
+                      <label class="container-checkbox">Calculate Work Before Shifts
+                          <input type="checkbox">
+                          <span class="checkmark-checkbox"></span>
+                      </label> 
+
+                      <label class="container-checkbox">Compute WBS anomilies
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark-checkbox"></span>
+                      </label> 
+
+
+                      <label class="container-checkbox">Calculate Work After Shifts
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark-checkbox"></span>
+                      </label> 
+
+                      <label class="container-checkbox">Compute WAS anomilies
+                          <input type="checkbox">
+                          <span class="checkmark-checkbox"></span>
+                      </label> 
+      
+                    </form>
+                  </div>
+      
+                  <div class="col-md-3"></div>
+      
+                  <div class="col-sm-12 btn-group mt-10">
+                    <button type="button" class="btn btn-primary btn-sm float-right header-button" nextStep>Save & Continue</button>
+                  </div>
+                </div>
+        </wizard-step>      
+      
+      
+        <wizard-step stepTitle="Paycode" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+                <div class="row">
+                
+                  <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                    <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                    <button type="button" class="btn btn-disabled btn-sm header-button">Finish</button>
+                  </div>
+                </div>
+      
+      
+                <div class="">
+                  <form action="">
+      
+                  </form>
+      
+                  <div class="col-sm-12 btn-group mt-10">
+                    <button type="button" class="btn btn-primary btn-sm float-right header-button" nextStep>Save & Continue</button>
+                  </div>
+                </div>
+        </wizard-step>
+      
+      
+        <wizard-step stepTitle="Applicable to" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+                <div class="row">
+                  <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                    <button type="button" class="btn btn-success btn-sm header-button" [routerLink]="['/config/create-shifts-overtime']">Finish</button>
+                  </div>
+                </div>
+      
+      
+                <div class="row">
+                  <div class="col-md-1"></div>
+      
+                  <div class="col-md-7">
+                    <form action="">
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Branch</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Division</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Department</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Section</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Sub-section</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Location</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Job Title</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Criteria</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Level</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Occupation Group</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Business Unit</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Cost Center</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Custom Group</label>
+                        <div class="col-sm-6">
+                          <select class="form-control">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                      </div>
+      
+                      <p style="color: red;">
+                        *All fields are compulsory
+                      </p>
+      
+                    </form>
+                  </div>
+      
+                  <div class="col-md-4"></div>
+                </div>
+        </wizard-step> 
+          
+
+      </wizard>
+    </app-card>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<app-modal-basic #modalDefault>
+    <div class="app-modal-header">
+      <h4 class="modal-title">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        Add Breaks
+      </h4>
+      <button type="button" class="close basic-close" (click)="modalDefault.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="app-modal-body">
+  
+  
+      <form action="javascript:">
+
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Name</label>
+          <div class="col-sm-9">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Type</label>
+          <div class="col-sm-9">
+            <select class="form-control" name="">
+              <option value="">--Select--</option>
+              <option value="">Option 1</option>
+            </select>  
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Time</label>
+          <div class="col-sm-9">
+            <div class="row">
+              <div class="col-sm-6">
+                  <input class="form-control" type="time">
+              </div>
+              <div class="col-sm-6">
+                  <input class="form-control" type="time">
+              </div>
+            </div>            
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Deductible</label>
+  
+            <div class="col-sm-9">
+              <div style="display: flex;" class="mt-2">
+                  <label class="container-radio">Yes
+                      <input type="radio" checked="checked" name="radio">
+                      <span class="checkmark-radio"></span>
+                  </label>
+                  <label class="container-radio">No
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark-radio"></span>
+                  </label>
+              </div>
+            </div>
+        </div>
+
+
+      </form>
+  
+  
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-success ripple light header-button" (click)="modalDefault.hide()">Submit</button>
+    </div>
+  </app-modal-basic>

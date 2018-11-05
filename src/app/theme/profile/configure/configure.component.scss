@@ -1,0 +1,30 @@
+.content-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // flex-wrap: wrap;
+    // border-radius: 5px;
+}
+
+.font {
+   font-size: 12px;
+}
+
+
+.container-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container-checkbox input:checked ~ .checkmark-checkbox {
+    background-color: #28a745;
+    border: 1px solid #28a745;	
+}

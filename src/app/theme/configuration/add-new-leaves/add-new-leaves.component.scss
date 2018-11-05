@@ -1,0 +1,27 @@
+label{
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.form-control{
+    padding: 0.20rem 0.75rem !important;
+    margin: 0px 10px 10px 10px !important;
+    
+}
+
+input.form-control, input.form-control:focus, input.form-control:hover {
+    border: 1px solid #959595;
+}
+
+.accordion-button{
+    margin-top: -5px;
+    border-radius: 8px;
+    width: 106px;
+    background: #4dabf5;
+    border: none;
+    color: #fff;
+}
+
+.small-select-text {
+    font-size: 12px !important;
+}

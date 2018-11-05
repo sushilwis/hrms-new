@@ -1,0 +1,148 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/application/requests']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Personal Leave
+                </h4>
+              </span>
+            </div>
+          </div>
+          
+          <div class="col-md-5">
+              <a class="btn btn-danger float-right btn-sm header-button">
+                <i></i>
+                Reject
+              </a>
+              <a class="btn btn-success float-right btn-sm header-button">
+                <i></i>
+                Approve
+              </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page-body">
+    <div class="container body-pad">
+      <div class="row">
+        <div class="col-sm-12 body-top-margin">
+          <app-card>
+
+            <div class="row mb-1">
+              <div class="col-sm-2">
+                <p>Employee Name</p> 
+              </div>
+
+              <div class="col-sm-10">
+                <p>John Doe</p>
+              </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-sm-2">
+                  <p>Application Type</p> 
+                </div>
+  
+                <div class="col-sm-10">
+                  <p>Personal Leave</p>
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-sm-2">
+                  <p>Leave</p> 
+                </div>
+  
+                <div class="col-sm-10">
+                  <div class="row">
+                    <div class="col-sm-3">
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="date" class="form-control">
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-sm-2">
+                  <p>Applied on</p> 
+                </div>
+  
+                <div class="col-sm-10">
+                  <div class="row">
+                    <div class="col-sm-3">
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-sm-2">
+                  <p>Remark</p> 
+                </div>
+  
+                <div class="col-sm-10">
+                  <p>Hospitalize due to dengue</p> 
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-sm-2">
+                  <p>Substitute</p> 
+                </div>
+  
+                <div class="col-sm-10">
+                  <p>xyz abc</p> 
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col-sm-2">
+                  <p>Attachments</p> 
+                </div>
+  
+                <div class="col-sm-2">
+                  <p>hospitalreports.pdf</p> 
+                </div>
+
+                <div class="col-sm-2">
+                    <a class="btn btn-success btn-sm header-button" [routerLink]="['']">
+                        Download
+                    </a> 
+                </div>
+            </div>
+
+
+            <div class="row mb-1">
+                <div class="col-sm-2">
+                  <p>My Remark</p> 
+                </div>
+  
+                <div class="col-sm-4">
+                  <textarea name="" cols="41"></textarea> 
+                </div>
+            </div>
+
+          </app-card>
+        </div>
+      </div>
+    </div>
+</div> 

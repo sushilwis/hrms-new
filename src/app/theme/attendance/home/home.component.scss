@@ -1,0 +1,24 @@
+.color-heading{
+    color: #2196F3;
+}
+
+.ng-tns-c6-29>div.cal-open-day-events {
+    display: none;
+}
+.cal-month-view .cal-day-cell.cal-today{
+    background-color: #fff !important;
+}
+
+.cal-month-view .cal-day-cell.cal-today .cal-day-number {
+    font-size: 1.2em !important;
+    background-color: #015df7 !important;
+    border-radius: 50% !important;
+    color: white !important;
+    display: inline-block !important;
+    width: 28px !important;
+    text-align: center !important;
+    height: 28px !important;
+}
+.cal-open-day-events{
+    display: none !important;
+}

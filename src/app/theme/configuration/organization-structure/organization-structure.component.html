@@ -1,0 +1,1508 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <div class="page-header-title">
+            <span>
+              <h4 class="m-b-10 headtext">
+                <a class="h4" [routerLink]="['/config/home']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Organization Structure
+              </h4>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-5">          
+          <a class="btn btn-success float-right btn-sm ml-1 header-button" [routerLink]="['/config/home']">
+            <i></i>
+            Finish
+          </a>
+          <a class="btn btn-default float-right btn-sm ml-1 header-button default-border" (click)="modalDefault.show()">
+            <i></i>
+            Bulk Upload
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="page-body body-padding">
+  <div class="container">
+    <div class="row">
+    <div class="col-md-12">
+      <squeezebox [multiple]="false">
+        <sb-item [collapsed]="true" class="accordion-panel">
+          <sb-item-head class="accordion-heading accordion-msg">
+            Branch
+            <button class="btn btn-primary float-right btn-sm ml-1 accordion-button" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </button>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <label class="label-control">
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow apply-btn">Apply</button>
+                  </div>
+                </div>
+
+
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" class="form-control no-border" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+
+
+
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+
+
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                  [resizeable]="false">
+
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+
+
+
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true"></ngx-datatable-column>
+                <ngx-datatable-column name="Short Name">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    DA
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Long Name">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    Department A
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column [sortable]="false" name="">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                  </ng-template>
+                </ngx-datatable-column>
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Division
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+
+
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                <option [ngValue]="10">10</option>
+                                <option [ngValue]="25">25</option>
+                                <option [ngValue]="50">50</option>
+                                <option [ngValue]="100">100</option>
+                              </select>
+                              entries
+                            </label> -->
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                <option [ngValue]="10">10</option>
+                                <option [ngValue]="25">25</option>
+                                <option [ngValue]="50">50</option>
+                                <option [ngValue]="100">100</option>
+                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow apply-btn no-border">Apply</button>
+                  </div>
+                </div>
+
+                <!-- <div class="input-group col-md-4">
+                            <input class="form-control py-2 border-right-0 border" type="search" value="search" id="example-search-input">
+                            <span class="input-group-append">
+                                <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                              </span>
+                        </div> -->
+
+                <div class="col-sm-3 float-right">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" class="form-control no-border" placeholder="Search">
+                  </div>
+                  <!-- <input type="search" [(ngModel)]="filterQuery" class="form-control input-sm full-data-search" placeholder="Search name"> -->
+                </div>
+              </div>
+
+
+
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+
+
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                  [resizeable]="false">
+
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+
+                </ngx-datatable-column>
+
+
+
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true"></ngx-datatable-column>
+                <ngx-datatable-column name="Short Name">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    DA
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Long Name">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    Department A
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column [sortable]="false" name="">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                  </ng-template>
+                </ngx-datatable-column>
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+
+
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Department
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+
+
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                <option [ngValue]="10">10</option>
+                                <option [ngValue]="25">25</option>
+                                <option [ngValue]="50">50</option>
+                                <option [ngValue]="100">100</option>
+                              </select>
+                              entries
+                            </label> -->
+
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                <option [ngValue]="10">10</option>
+                                <option [ngValue]="25">25</option>
+                                <option [ngValue]="50">50</option>
+                                <option [ngValue]="100">100</option>
+                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+
+
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+
+
+
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+
+
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                  [resizeable]="false">
+
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value"
+                    let-allRowsSelected="allRowsSelected" let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+
+
+
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                    001
+                  </ng-template> -->
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Short Name">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    DA
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Long Name">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    Department A
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column [sortable]="false" name="">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                  </ng-template>
+                </ngx-datatable-column>
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+
+
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Section
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                      <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                        <option [ngValue]="10">10</option>
+                                        <option [ngValue]="25">25</option>
+                                        <option [ngValue]="50">50</option>
+                                        <option [ngValue]="100">100</option>
+                                      </select>
+                                      entries
+                                    </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                        <option [ngValue]="10">10</option>
+                                        <option [ngValue]="25">25</option>
+                                        <option [ngValue]="50">50</option>
+                                        <option [ngValue]="100">100</option>
+                                      </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                            001
+                          </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                  </ng-template>
+                </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Sub-Section
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Location
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Job Title
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Criteria
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Level
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Occupation Group
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Business Unit
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Cost Center
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+
+        <sb-item class="accordion-panel" [collapsed]="true">
+          <sb-item-head class="accordion-heading accordion-msg">Custom Group
+            <a class="btn btn-primary float-right btn-sm ml-1 accordion-button text-white" (click)="modalDefault.show()">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </sb-item-head>
+          <sb-item-body class="accordion-content">
+            <div class="accordion-desc">
+        
+        
+              <div class="row">
+                <div class="col-sm-9">
+                  <div>
+                    <!-- <label class="label-control">Show
+                                              <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select>
+                                              entries
+                                            </label> -->
+        
+                    <label class="label-control">
+                      <!-- <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                                                <option [ngValue]="10">10</option>
+                                                <option [ngValue]="25">25</option>
+                                                <option [ngValue]="50">50</option>
+                                                <option [ngValue]="100">100</option>
+                                              </select> -->
+                      <select class="form-control no-border" name="select">
+                        <option value="opt1">Bulk Actions</option>
+                        <option value="opt2">Delete</option>
+                        <option value="opt2">Change</option>
+                      </select>
+                      <!-- <button type="button" class="btn btn-light">Apply</button>            -->
+                    </label>
+                    <button type="button" class="btn btn-light btn-sm datatable-button shadow no-border">Apply</button>
+                  </div>
+                </div>
+        
+        
+                <div class="col-sm-3">
+                  <div class="form-group has-feedback has-search shadow">
+                    <i class="fa fa-search form-control-feedback"></i>
+                    <input type="search" [(ngModel)]="filterQuery" class="form-control border-rm" placeholder="Search">
+                  </div>
+                </div>
+              </div>
+        
+        
+        
+              <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="">
+        
+        
+                <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                    let-selectFn="selectFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+        
+                  <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                    let-onCheckboxChangeFn="onCheckboxChangeFn">
+                    <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+                      <label>
+                        <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+                        <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      </label>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
+        
+        
+        
+                <!-- <ngx-datatable-column name=""></ngx-datatable-column> -->
+                <ngx-datatable-column name="Code" [sortable]="true">
+                  <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                                    001
+                                  </ng-template> -->
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Short Name">
+                </ngx-datatable-column>
+        
+                <ngx-datatable-column name="Long Name">
+                </ngx-datatable-column>
+        
+                <!-- <ngx-datatable-column [sortable]="false" name="">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+                          </ng-template>
+                        </ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="Active/Deactive" prop="address.city"></ngx-datatable-column> -->
+                <!-- <ngx-datatable-column name="State" prop="address.state"></ngx-datatable-column> -->
+              </ngx-datatable>
+        
+        
+            </div>
+          </sb-item-body>
+        </sb-item>
+      </squeezebox>
+    </div>
+
+  </div>
+  </div>  
+</div>
+
+
+
+<app-modal-basic #modalDefault>
+  <div class="app-modal-header">
+    <h4 class="modal-title">
+      <!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
+      Bulk Upload
+    </h4>
+    <button type="button" class="close basic-close" (click)="modalDefault.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="app-modal-body">
+
+
+    <form action="javascript:">
+
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <p>As per our format, you need to first download the format and then fill it to upload back.</p>
+          <div class="row">
+            <div class="col-sm-5 offset-sm-1">
+              <p>Step 1:</p>
+              <button class="btn btn-inverse btn-outline-inverse btn-block ripple light">Download Format</button>
+            </div>
+            <div class="col-sm-5">
+              <p>Step 2:</p>
+              <button class="btn btn-info btn-block ripple light">Upload File</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+
+  </div>
+  <div class="app-modal-footer">
+    <button type="button" class="btn btn-success ripple light header-button" (click)="modalDefault.hide()">Finish</button>
+  </div>
+</app-modal-basic>

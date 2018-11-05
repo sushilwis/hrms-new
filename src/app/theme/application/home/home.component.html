@@ -1,0 +1,400 @@
+
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Application
+                </h4>
+              </span>
+            </div>
+          </div>  
+  
+          <div class="col-md-5">              
+            <a class="btn bg-dark float-right btn-sm header-button text-white" [routerLink]="['/application/home']">
+                <i></i>
+                Apply
+            </a>
+            <a class="btn btn-light float-right btn-sm header-button table-action-btn" [routerLink]="['/application/requests']">
+              <i></i>
+              Request
+            </a>
+            
+          </div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class="page-body">
+<div class="container body-pad">
+  <div class="row">
+    <div class="col-sm-12 body-top-margin">
+      
+        <div class="row m-b-30">
+          <div class="col-md-12">
+            
+            <div class="md-tabs" >
+              <ngb-tabset>
+
+                <ngb-tab title="Leave">
+                  <ng-template ngbTabContent>
+                    <div [@fadeInOutTranslate] class="m-t-15">
+                      
+                        <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                          [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+                  
+                          <ngx-datatable-column name="Leave Type" [width]="120">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              Sick Leave
+                            </ng-template>
+                          </ngx-datatable-column>
+
+                          <ngx-datatable-column name="Start Date" [width]="120">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              01/02/2018
+                            </ng-template>
+                          </ngx-datatable-column>
+
+                          <ngx-datatable-column name="End Date" [width]="120">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              10/02/2018
+                            </ng-template>
+                          </ngx-datatable-column>
+
+                          <ngx-datatable-column name="Unit" [width]="110"></ngx-datatable-column>
+                          <ngx-datatable-column name="Status" [width]="110"></ngx-datatable-column>
+
+                          <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              <button type="button" class="btn btn-danger btn-sm datatable-button" style="margin-left: 0px !important;">Withdraw</button>
+                            </ng-template>
+                          </ngx-datatable-column>
+
+                          <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              <a [routerLink]="['/application/sick-leave']">
+                                <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                              </a>  
+                            </ng-template>
+                          </ngx-datatable-column>
+                        </ngx-datatable>
+
+                     
+                    </div>
+                  </ng-template>
+                </ngb-tab>
+
+                <ngb-tab title="Overtime">
+                  <ng-template ngbTabContent>
+                    <div [@fadeInOutTranslate] class="m-t-15">
+                      
+
+                        <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                        [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows1">
+                
+                        <ngx-datatable-column name="Overtime" [width]="120">
+                          <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                            Sick Leave
+                          </ng-template> -->
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Date" [width]="120">
+                            <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                              Sick Leave
+                            </ng-template> -->
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="Start Time" [width]="120">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            4:00 pm
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column name="End Time" [width]="120">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            6:00 pm
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <!-- <ngx-datatable-column name="Unit"></ngx-datatable-column> -->
+                        <ngx-datatable-column name="Status" [width]="120"></ngx-datatable-column>
+
+                        <ngx-datatable-column [width]="100" [sortable]="false">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-danger btn-sm datatable-button" style="margin-left: 0px !important;">Withdraw</button>
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        <ngx-datatable-column [width]="100" [sortable]="false">
+                          <ng-template let-row="row" ngx-datatable-cell-template>
+                            <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                          </ng-template>
+                        </ngx-datatable-column>
+
+                        </ngx-datatable>
+
+                    </div>
+                  </ng-template>
+                </ngb-tab>
+
+                <ngb-tab title="Outdoor">
+                  <ng-template ngbTabContent>
+                    <div [@fadeInOutTranslate] class="m-t-15">
+                    
+                        <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                          [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows2">
+                  
+                          <ngx-datatable-column name="Outdoor" [width]="100">
+                            <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                              Sick Leave
+                            </ng-template> -->
+                          </ngx-datatable-column>
+  
+                          <ngx-datatable-column name="Start Date" [width]="120">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              01/02/2018
+                            </ng-template>
+                          </ngx-datatable-column>
+  
+                          <ngx-datatable-column name="End Date" [width]="120">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              05/02/2018
+                            </ng-template>
+                          </ngx-datatable-column>
+
+                          <ngx-datatable-column name="Start Time" [width]="120">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                4:00 pm
+                              </ng-template>
+                          </ngx-datatable-column>
+    
+                          <ngx-datatable-column name="End Time" [width]="120">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                6:00 pm
+                              </ng-template>
+                          </ngx-datatable-column>
+  
+                          <!-- <ngx-datatable-column name="Unit"></ngx-datatable-column> -->
+                          <ngx-datatable-column name="Status" [width]="100"></ngx-datatable-column>
+  
+                          <ngx-datatable-column [width]="100" [sortable]="false">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              <button type="button" class="btn btn-danger btn-sm datatable-button">Withdraw</button>
+                            </ng-template>
+                          </ngx-datatable-column>
+  
+                          <ngx-datatable-column [width]="100" [sortable]="false">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn">View</button>
+                            </ng-template>
+                          </ngx-datatable-column>  
+                        </ngx-datatable>
+
+                   
+                    </div>
+                  </ng-template>
+                </ngb-tab>
+
+                <ngb-tab title="Work from Home">
+                  <ng-template ngbTabContent>
+                    <div [@fadeInOutTranslate] class="m-t-15">
+                
+                          <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                          [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows3">
+                  
+                          <ngx-datatable-column name="WFH" [width]="90">
+                            <!-- <ng-template let-row="row" ngx-datatable-cell-template>
+                              Sick Leave
+                            </ng-template> -->
+                          </ngx-datatable-column>
+  
+                          <ngx-datatable-column name="Start Date" [width]="120">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              01/02/2018
+                            </ng-template>
+                          </ngx-datatable-column>
+  
+                          <ngx-datatable-column name="End Date" [width]="120">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              05/02/2018
+                            </ng-template>
+                          </ngx-datatable-column>
+
+                          <ngx-datatable-column name="Start Time" [width]="120">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                4:00 pm
+                              </ng-template>
+                          </ngx-datatable-column>
+    
+                          <ngx-datatable-column name="End Time" [width]="120">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                6:00 pm
+                              </ng-template>
+                          </ngx-datatable-column>
+  
+                          <!-- <ngx-datatable-column name="Unit"></ngx-datatable-column> -->
+                          <ngx-datatable-column name="Status" [width]="100"></ngx-datatable-column>
+  
+                          <ngx-datatable-column [width]="100" [sortable]="false">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              <button type="button" class="btn btn-danger btn-sm datatable-button">Withdraw</button>
+                            </ng-template>
+                          </ngx-datatable-column>
+  
+                          <ngx-datatable-column [width]="100" [sortable]="false">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                              <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn">View</button>
+                            </ng-template>
+                          </ngx-datatable-column>  
+
+                        </ngx-datatable>
+                
+                    </div>
+                  </ng-template>
+                </ngb-tab>
+
+                <ngb-tab title="Reimbursement" >
+                    <ng-template ngbTabContent>
+                      <div [@fadeInOutTranslate] class="m-t-15">
+                      
+
+                            <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                            [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows4">
+                    
+                            <ngx-datatable-column name="Claim Type" [width]="120">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                Travel
+                              </ng-template>
+                            </ngx-datatable-column>
+    
+                            <ngx-datatable-column name="Start Date" [width]="120">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                01/02/2018
+                              </ng-template>
+                            </ngx-datatable-column>
+    
+                            <ngx-datatable-column name="End Date" [width]="120">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                05/02/2018
+                              </ng-template>
+                            </ngx-datatable-column>
+  
+                            <!-- <ngx-datatable-column name="Start Time">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                  4:00 pm
+                                </ng-template>
+                            </ngx-datatable-column>
+      
+                            <ngx-datatable-column name="End Time">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                  6:00 pm
+                                </ng-template>
+                            </ngx-datatable-column> -->
+    
+                            <!-- <ngx-datatable-column name="Unit"></ngx-datatable-column> -->
+                            <ngx-datatable-column name="Amount" [width]="100"></ngx-datatable-column>
+                            <ngx-datatable-column name="Status" [width]="100"></ngx-datatable-column>
+    
+                            <ngx-datatable-column [width]="100" [sortable]="false">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                <button type="button" class="btn btn-danger btn-sm datatable-button" style="margin-left: 0px !important;">Withdraw</button>
+                              </ng-template>
+                            </ngx-datatable-column>
+    
+                            <ngx-datatable-column [width]="100" [sortable]="false">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;">View</button>
+                              </ng-template>
+                            </ngx-datatable-column>  
+  
+                          </ngx-datatable>
+
+                 
+                      </div>
+                    </ng-template>
+                </ngb-tab>
+
+                <ngb-tab title="Change Shift">
+                    <ng-template ngbTabContent>
+                      <div [@fadeInOutTranslate] class="m-t-15">
+                            <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+                            [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows5">
+                    
+                            <ngx-datatable-column name="Old Date">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                01/02/2018 - 10/02/2018
+                              </ng-template>
+                            </ngx-datatable-column>
+    
+                            <ngx-datatable-column name="Old Shift">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                4:00pm - 6:00pm
+                              </ng-template>
+                            </ngx-datatable-column>
+    
+                            <ngx-datatable-column name="New Shift">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                4:00pm - 6:00pm
+                              </ng-template>
+                            </ngx-datatable-column>
+  
+                            <ngx-datatable-column name="Status" [width]="100"></ngx-datatable-column>
+    
+                            <ngx-datatable-column [width]="100" [sortable]="false">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                <button type="button" class="btn btn-danger btn-sm datatable-button">Withdraw</button>
+                              </ng-template>
+                            </ngx-datatable-column>
+    
+                            <ngx-datatable-column [width]="100" [sortable]="false">
+                              <ng-template let-row="row" ngx-datatable-cell-template>
+                                <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn">View</button>
+                              </ng-template>
+                            </ngx-datatable-column>  
+  
+                          </ngx-datatable>
+                   
+                      </div>
+                    </ng-template>
+                </ngb-tab>  
+
+              </ngb-tabset>
+            </div>
+          </div>
+
+          <div style="position:absolute; top: 0px; right: 16px;">
+              <div ngbDropdown class="dropdown-primary">
+
+                  <button ngbDropdownToggle class="btn btn-primary ripple light" type="button">Apply <i class="fas fa-caret-down"></i></button>
+
+                  <div ngbDropdownMenu class="float-left" style="left: -140px !important;">
+                    <a class="dropdown-item ripple light" [routerLink]="['/application/leave-application']">Leave Application</a>
+                    <a class="dropdown-item ripple light" [routerLink]="['/application/overtime-application']">Overtime Application</a>
+                    <a class="dropdown-item ripple light" [routerLink]="['/application/outdoor-application']">Outdoor Application</a>
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <a class="dropdown-item ripple light" [routerLink]="['/application/work-from-home-application']">Work form Home Application</a>
+                    <a class="dropdown-item ripple light" [routerLink]="['/application/reimbursement-application']">Reimbursement Application</a>
+                    <a class="dropdown-item ripple light" [routerLink]="['/application/change-shift']">Change Shift</a>
+                  </div>
+
+              </div>
+          </div>
+
+        </div>
+    
+    </div>  
+  </div>
+</div>  
+</div>

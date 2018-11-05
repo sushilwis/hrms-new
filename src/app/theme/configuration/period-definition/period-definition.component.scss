@@ -1,0 +1,21 @@
+
+.checkbox-fade.fade-in-default .cr .cr-icon, .checkbox-fade.zoom-default .cr .cr-icon, .checkbox-zoom.fade-in-default .cr .cr-icon, .checkbox-zoom.zoom-default .cr .cr-icon{
+    color: #666666 !important;
+}
+
+// input.form-control, input.form-control:focus, input.form-control:hover {
+//     border: 1px solid #959595;
+// }
+  
+.apply-btn, .apply-btn:focus, .apply-btn:active, .apply-btn:active {
+    background: #ffffff !important;
+    padding: 5px 20px !important;
+    border-radius: 4px !important;
+    border:0px;
+    margin-left: 20px;
+    outline: none;
+}
+    
+.no-border, .no-border:hover, .no-border:active, .no-border:focus {
+    border: none;
+}

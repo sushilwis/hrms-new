@@ -1,0 +1,774 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-9">
+          <div class="page-header-title">
+            <span>
+              <h4 class="m-b-10 headtext">
+                <a class="h4" [routerLink]="['/config/create-leaves']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Add New Leaves
+              </h4>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="page-body body-padding">
+  <div class="row">
+    <div class="col-md-10 offset-md-1" style="margin-top: 150px;">
+        
+      <!-- <div class="card-header-all">
+        <p class="float-left">General Info</p>
+        <p class="float-right">Step 1 of 4</p>
+      </div> -->
+
+      <app-card>
+      <wizard #wizard class="arc-wizard" navBarLayout="large-filled-symbols">
+        <wizard-step stepTitle="General Info" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+
+          <div class="row">          
+            <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+              <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+              <button type="button" class="btn btn-light btn-sm header-button table-action-btn">Finish</button>
+            </div>
+          </div>
+
+          <!-- wizard content -->          
+            <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-7">
+                <form action="">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Leave Code*</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Leave Name*</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Type*</label>
+                    <div class="col-sm-6">
+                      <select class="form-control">
+                        <option>--Select--</option>
+                        <option>One</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Leave Level*</label>
+                    <div class="col-sm-6">
+                      <select class="form-control">
+                        <option>--Select--</option>
+                        <option>One</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Select Color*</label>
+                    <div class="col-sm-6">
+                      <input type="color" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+
+                    <label class="col-sm-3 col-form-label">Leave Unit*</label>
+
+                    <div class="col-sm-6">
+                      <div style="display: flex;">
+                          <label class="container-radio">Hours
+                              <input type="radio" checked="checked" name="radio">
+                              <span class="checkmark-radio"></span>
+                            </label>
+                            <label class="container-radio">Days
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark-radio"></span>
+                              </label>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+
+              <div class="col-md-3"></div>
+
+              <div class="col-sm-12 mt-10 text-right float-lg-right">
+                <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+              </div>
+            </div>  
+        </wizard-step>
+
+
+        <wizard-step stepTitle="Entitlements" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+          
+          <div class="row">
+            <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+              <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+              <button type="button" class="btn btn-light btn-sm header-button table-action-btn">Finish</button>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label class="col-sm-2 col-form-label">Accrual</label>
+            <div class="col-sm-3">
+              <select class="form-control">
+                <option>Yearly</option>
+                <option>One</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label class="col-sm-2 col-form-label">Accrue on</label>
+            <div class="col-sm-3">
+              <div class="radio radio-light radio-inline">
+                <label class="container-radio">Start of Period
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark-radio"></span>
+                  </label>
+                <label class="container-radio">End of Period
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark-radio"></span>
+                  </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label class="col-sm-2 col-form-label">Define Period</label>
+            <div class="col-sm-3">
+              <div class="row">
+                <div class="col-sm-6">
+                  <input type="date" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                  <input type="date" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-2"></div>
+            <label class="col-sm-2 col-form-label">For</label>
+
+            <div class="col-sm-3">
+              <div class="radio radio-light radio-inline">
+                <label class="container-radio">All Employees
+                    <input type="radio" checked="checked" name="radio" (click)="showEmployeesSec()">
+                    <span class="checkmark-radio"></span>
+                  </label>
+                <label class="container-radio">Experience based
+                    <input type="radio" name="radio" (click)="showExperienceSec()">
+                    <span class="checkmark-radio"></span>
+                  </label>
+                <label class="container-radio">Job Title based
+                    <input type="radio" name="radio" (click)="showJobTitleSec()">
+                    <span class="checkmark-radio"></span>
+                  </label>
+              </div>
+            </div>
+          </div>
+
+
+          <div *ngIf="showAllEmployees" class="form-group row">
+            <div class="col-md-2"></div>
+            <label class="col-sm-2 col-form-label">Leave Count</label>
+            <div class="col-sm-3">
+              <div class="row">
+                <div class="col-sm-6">
+                  <input type="text" class="form-control">
+                </div>
+                <div class="col-sm-6">
+                  <select class="form-control">
+                    <option>Days</option>
+                    <option>One</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3"></div>            
+          </div>
+
+
+          <div *ngIf="showExperience" class="" style="width:100% !important; padding: 0rem 0.9rem 0 0.9rem;">
+            <table class="table table-sm borderless" style="margin:0px !important;">
+              <tr style="background-color: #d9d9d9 !important;">
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">Experience</th>
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">Year</th>
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">Month</th>
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">Leave count day(s)</th>
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">
+                  <button class="btn btn-primary float-right btn-sm ml-1 accordion-button">
+                    <i class="fa fa-plus"></i>
+                    Add
+                  </button>
+                </th>
+              </tr>
+            
+              <tr>
+                <td class="border-bottom">
+                  <!-- <ng-template> -->
+                    <select class="form-control" name="select">
+                      <option value="opt1">For New Joinees</option>
+                      <!-- <option value="opt2">Admin</option>
+                      <option value="opt2">User</option> -->
+                    </select>
+                  <!-- </ng-template> -->
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="06">
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="10">
+                </td>
+                <td class="border-bottom">
+                  <!-- <input type="text" class="form-control form-control-sm" style="width: 75px"> -->
+                </td>
+              </tr>
+
+              <tr>
+                <td class="border-bottom">
+                  <!-- <ng-template> -->
+                    <select class="form-control" name="select">
+                      <option value="opt1">After</option>
+                      <!-- <option value="opt2">Admin</option>
+                      <option value="opt2">User</option> -->
+                    </select>
+                  <!-- </ng-template> -->
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                </td>
+                <td class="border-bottom">
+                  <!-- <input type="text" class="form-control form-control-sm" style="width: 75px"> -->
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div *ngIf="showJobTitle" class="" style="width:100% !important; padding: 0rem 0.9rem 0 0.9rem;">
+            <table class="table table-sm borderless" style="margin:0px !important;">
+              <tr style="background-color: #d9d9d9 !important;">
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">Job Title</th>
+                <!-- <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">Year</th>
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">Month</th> -->
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">Leave count day(s)</th>
+                <th class="border-bottom" style="box-shadow: 0px 1px 2px #d9d9d9;">
+                  <button class="btn btn-primary float-right btn-sm ml-1 accordion-button">
+                    <i class="fa fa-plus"></i>
+                    Add
+                  </button>
+                </th>
+              </tr>
+          
+              <tr>
+                <td class="border-bottom">
+                  <!-- <ng-template> -->
+                  <select class="form-control" name="select">
+                    <option value="opt1">Manager</option>
+                    <!-- <option value="opt2">Admin</option>
+                                <option value="opt2">User</option> -->
+                  </select>
+                  <!-- </ng-template> -->
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                </td>
+                <!-- <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="06">
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="10">
+                </td> -->
+                <td class="border-bottom">
+                  <!-- <input type="text" class="form-control form-control-sm" style="width: 75px"> -->
+                </td>
+              </tr>
+          
+              <tr>
+                <td class="border-bottom">
+                  <!-- <ng-template> -->
+                  <select class="form-control" name="select">
+                    <option value="opt1">Designer</option>
+                    <!-- <option value="opt2">Admin</option>
+                                <option value="opt2">User</option> -->
+                  </select>
+                  <!-- </ng-template> -->
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                </td>
+                <!-- <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                </td>
+                <td class="border-bottom">
+                  <input type="text" class="form-control form-control-sm" style="width: 75px" value="00">
+                </td> -->
+                <td class="border-bottom">
+                  <!-- <input type="text" class="form-control form-control-sm" style="width: 75px"> -->
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="col-sm-12 mt-30 text-right float-lg-right">
+            <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+          </div>
+        </wizard-step>
+
+
+        <wizard-step stepTitle="Leave Policy" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+          <div class="row">
+           
+            <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+              <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+              <button type="button" class="btn btn-light btn-sm header-button table-action-btn">Finish</button>
+            </div>
+          </div>
+
+
+          <div class="row">
+
+            <div class="col-md-1"></div>
+
+            <div class="col-md-11">
+              <form action="">
+
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label class="border-checkbox-label">Holiday weekend setting</label>
+                  </div>
+                  <div class="col-sm-10">
+                      <label class="container-checkbox">Exclude holidays for leave
+                          <input type="checkbox" checked="checked">
+                          <span class="checkmark-checkbox"></span>
+                      </label>
+                   
+                      <label class="container-checkbox">Exclude weekend for leave
+                          <input type="checkbox">
+                          <span class="checkmark-checkbox"></span>
+                      </label>
+                      
+
+                    <div style="display: flex;">
+                        <label class="container-checkbox">Include
+                            <input type="checkbox">
+                            <span class="checkmark-checkbox"></span>
+                          </label>
+                      <select class="form-control small-select-text" style="width: 250px">
+                        <option>all holidays and weekend in leave</option>
+                      </select>
+                      <label class="">, if the applied leave period exceeds</label>
+                      <input type="text" class="form-control" style="width: 70px">
+                      <select class="form-control small-select-text" style="width: 140px">
+                        <option>Calender Days</option>
+                      </select>
+                   
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label class="border-checkbox-label">Leave Restriction*</label>
+                  </div>
+                  <div class="col-sm-10">
+                      <label class="container-checkbox">Enable quater-day option
+                          <input type="checkbox" >
+                          <span class="checkmark-checkbox"></span>
+                      </label>
+                      <label class="container-checkbox">Enable half-day option
+                          <input type="checkbox" >
+                          <span class="checkmark-checkbox"></span>
+                      </label>
+                      <div style="display: flex;">
+                      <label class="container-checkbox">Max no. of consecutive day(s) of leave allowed
+                          <input type="checkbox" >
+                          <span class="checkmark-checkbox"></span>
+                      </label>
+                          <input type="text" class="form-control" style="width: 150px;">
+                          <label class="">Days</label>
+                    </div>
+
+                    <div style="display: flex;">
+                        <label class="container-checkbox">Leave application should be given
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                            <input type="text" class="form-control" style="width: 70px">
+                            <label class="">Days Before</label>
+                    </div>
+                    <div style="display: flex;">
+                        <label class="container-checkbox">Enable file upload option if the applied leave period exceeds
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                            <input type="text" class="form-control" style="width: 70px">
+                            <label class="">Consecutive days</label>
+                    </div>
+                    <div style="display: flex;">
+                        <label class="container-checkbox">Supervisor approval required if applied leave period exceeds
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                          </label>
+                            <input type="text" class="form-control" style="width: 70px">
+                            <label class="">Consecutive days</label>
+                    </div>
+                    <div style="display: flex;">
+                        <label class="container-checkbox">Round of permitted leave count
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                            <select class="form-control small-select-text" style="width: 120px">
+                                <option>Nearest</option>
+                              </select>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label class="border-checkbox-label">Clubbing policy</label>
+                  </div>
+                  <div class="col-sm-10">
+                    <div style="display: flex;">
+                        <label class="container-checkbox">Do not club with
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                      <input type="text" class="form-control" style="width: 250px;">
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label class="border-checkbox-label">Leave Balance Restriction</label>
+                  </div>
+                  <div class="col-sm-10">
+                    <div style="display: flex;">
+                        <label class="container-checkbox">Calculate leave balance (while applying leave) based on count 
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                      <select class="form-control small-select-text" style="width: 210px;">
+                        <option>as on the date of request</option>
+                      </select>
+                    </div>
+                    <div>
+                        <label class="container-checkbox">Allow beyond the permitted limit 
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                    </div>
+                    <div style="display: flex;">
+                        <label class="container-checkbox">Mark leave beyond
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                      <input type="text" class="form-control" style="width: 80px">
+                      <label class="">days as Loss of Pay</label>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label class="border-checkbox-label">New Joinee leave entitlement details</label>
+                  </div>
+                  <div class="col-sm-10">
+                    <div>
+                        <label class="container-checkbox">Consider date of joining
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                    </div>
+                    <div>
+                      <label class="border-checkbox-label">Probation period: </label>
+                      <label>
+                        <input checked="" name="radio" type="radio">
+                        <i class=""></i>Calender Days
+                      </label>
+                      <label>
+                        <input checked="" name="radio" type="radio">
+                        <i class=""></i>Business Days
+                      </label>
+                    </div>
+                    <div style="display:flex;">
+                      <label class="border-checkbox-label">No. of waiting period</label>
+                      <input type="text" class="form-control" style="width: 80px">
+                      <label class="">days</label>
+                    </div>
+                    <div style="display:flex;">
+                      <label class="border-checkbox-label">Initial value duringprobation period </label>
+                      <input type="text" class="form-control" style="width: 80px">
+                    </div>
+                    <div style="display:flex;">
+                      <label class="border-checkbox-label">If the date if the joining is after</label>
+                      <input type="text" class="form-control" style="width: 80px">
+                      <label class="">of the month, then the leave count for the month should be </label>
+                      <input type="text" class="form-control" style="width: 80px">
+                      <label class="">days</label>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label class="border-checkbox-label">Roll Over/Carry Forward</label>
+                  </div>
+                  <div class="col-sm-10">
+                    <div>
+                        <label class="container-checkbox">Enable Roll Over Carry Forward
+                            <input type="checkbox" >
+                            <span class="checkmark-checkbox"></span>
+                        </label>
+                    </div>
+                    <div style="display: flex;">
+                      <label class="border-checkbox-label">Maximum Roll Over Accumulation Count: </label>
+                      <input type="text" class="form-control" style="width: 80px">
+                    </div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+            <div class="col-md-1"></div>
+
+            <div class="col-sm-12 mt-10 text-right float-lg-right">
+              <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+            </div>
+          </div>
+        </wizard-step>
+
+
+
+        <wizard-step stepTitle="Applicable" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+          <div class="row">
+            <!-- <div class="col-md-12">
+              <p class="float-left">Applicable</p>
+              <p class="float-right">Step 4 of 4</p>
+            </div> -->
+            <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+              <button type="button" class="btn btn-light btn-sm header-button table-action-btn" [routerLink]="['/config/create-leaves']">Finish</button>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <!-- <form action=""> -->
+
+                <!-- <div class="row"> -->
+                <div class="col-md-1"></div>
+    
+                <div class="col-md-7">
+                  <form action="">
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Branch</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Division</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Department</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Section</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Sub-section</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Location</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Job Title</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Criteria</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Level</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Occupation Group</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Business Unit</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Cost Center</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Custom Group</label>
+                      <div class="col-sm-6">
+                        <select class="form-control small-select-text">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Gender</label>
+                        <div class="col-sm-6">
+                          <select class="form-control small-select-text">
+                            <option>--Select--</option>
+                            <option>One</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Martial Status</label>
+                        <div class="col-sm-6">
+                          <select class="form-control small-select-text">
+                            <option>Unmarried</option>
+                            <option>Married</option>
+                          </select>
+                        </div>
+                    </div>
+    
+                  </form>
+                </div>
+    
+                <div class="col-md-4"></div>
+          </div>
+        </wizard-step>
+
+      </wizard>
+    </app-card>
+    </div>
+  </div>
+</div>

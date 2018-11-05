@@ -1,0 +1,67 @@
+.count{
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px #e0e0e0;
+    text-align: center;
+}
+.count-content p{
+    font-weight: 600;
+    margin: 10px 0;
+}
+.import-links{
+    padding: 8px 0;
+    margin: 0px !important;
+    color: #13b1f6;
+    font-size: 18px;
+    i{
+        margin-left: 10px;
+    }
+}
+.border-bottom{
+    border-bottom: 1px solid #999;
+}
+.request-height{
+    position: relative;
+    box-shadow: 0px 1px 3px 1px #d9d9d9;
+    p{
+        background: #eee;
+        margin-bottom: 5px;
+        padding: 5px;
+        font-size: 12px;
+    }
+    .request-height-child {
+        background: #fff;
+        padding: 20px 20px 0 20px;
+        max-height: 183px;
+        overflow-y: scroll;
+        box-shadow: 0px 1px 3px 1px #d9d9d9;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    &::after {
+        display: block;
+        content: "";
+        height: 25px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: white;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        box-shadow: 0px 1px 3px 1px #d9d9d9;
+    }
+}
+.progress{
+    height: 60px;
+    background-color:#ffffff;
+    color: #dddddd;
+    font-size: 22px;
+    box-shadow: 0px 1px 5px #e0e0e0;
+
+}
+
+
+
+

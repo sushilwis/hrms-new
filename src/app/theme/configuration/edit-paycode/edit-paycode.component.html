@@ -1,0 +1,320 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+          <div class="col-md-9">
+            <div class="page-header-title">
+              <!-- <span class="float-left"> -->
+              <!-- <i class="fa fa-chevron-left" aria-hidden="true"></i> -->
+              <!-- </span> -->
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <!-- [routerLink]="[breadcrumb.backBtnLink]" -->
+                  <a class="h4" [routerLink]="['/config/home']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Create Custom Paycode
+                </h4>
+              </span>
+              <!--<p class="m-b-0" *ngIf="breadcrumb.caption">{{ breadcrumb.caption }}</p>-->
+            </div>
+            <!-- <ul class="breadcrumb">
+                          <li class="breadcrumb-item">
+                            <a [routerLink]="['/dashboard/default/']">
+                              <i class="feather icon-home"></i>
+                            </a>
+                          </li>
+                          <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs;">
+                            <a [ngClass]="breadcrumb.status === false ? 'not-active': ''" [routerLink]="breadcrumb.url">{{breadcrumb.label}}</a>
+                          </li>
+                        </ul> -->
+          </div>
+          <div class="col-md-3">
+            <a class="btn btn-success float-right btn-sm ml-1 header-button" [routerLink]="['/config/create-paycode']">
+              <i></i>
+              Finish
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="page-body body-padding">
+    
+      <div class="container">
+        <app-card>
+          <div class="row">  
+            <div class="col-md-2"></div>  
+            <div class="col-md-5">
+        <form action="javascript:">
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Paycode</label>
+            <div class="col-sm-9">
+              <input class="form-control" type="text" value="BSC">
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Description</label>
+            <div class="col-sm-9">
+              <input class="form-control" type="text" value="Basic">
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Priority</label>
+            <div class="col-sm-9">
+              <input class="form-control" type="text">
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Wages</label>
+  
+            <div class="col-sm-9">
+              <div style="display: flex;">
+                  <label class="container-radio">ORD
+                      <input type="radio" checked="checked" name="radio">
+                      <span class="checkmark-radio"></span>
+                  </label>
+                  <label class="container-radio">ADD
+                    <input type="radio" checked="checked" name="radio">
+                    <span class="checkmark-radio"></span>
+                  </label>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <!-- <div class=""> -->
+            <label class="col-sm-3 col-form-label">Income Type</label>
+  
+            <div class="col-sm-9">
+              <div style="display: flex;">
+                  <label class="container-radio">Fixed
+                      <input type="radio" checked="checked" name="radio">
+                      <span class="checkmark-radio"></span>
+                    </label>
+                    <label class="container-radio">Variable
+                        <input type="radio" checked="checked" name="radio">
+                        <span class="checkmark-radio"></span>
+                      </label>
+  
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+  
+          <div class="form-group row">
+            <!-- <div class=""> -->
+            <label class="col-sm-3 col-form-label">Type</label>
+  
+            <div class="col-sm-9">
+              <div style="display: flex;">
+                  <label class="container-radio">Earning
+                      <input type="radio" checked="checked" name="radio">
+                      <span class="checkmark-radio"></span>
+                    </label>
+                    <label class="container-radio">Deduction
+                        <input type="radio" checked="checked" name="radio">
+                        <span class="checkmark-radio"></span>
+                      </label>
+  
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+  
+          <div class="form-group row">
+            <!-- <div class=""> -->
+            <label class="col-sm-3 col-form-label">Run Type</label>
+  
+            <div class="col-sm-9">
+              <div style="display: flex;">
+                  <label class="container-radio">Normal Run
+                      <input type="radio" checked="checked" name="radio">
+                      <span class="checkmark-radio"></span>
+                    </label>
+                    <label class="container-radio">Special Run
+                        <input type="radio" checked="checked" name="radio">
+                        <span class="checkmark-radio"></span>
+                      </label>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Title</label>
+            <div class="col-sm-9">
+              <label class="container-checkbox">Attendence Dependant
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark-checkbox"></span>
+              </label>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <label class="container-checkbox">Create Dependant Component
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark-checkbox"></span>
+                </label>
+  
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+              <div style="display: flex;">
+                <label class="container-checkbox">Cost Allocation
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark-checkbox"></span>
+                </label>
+                <label class="ml-1" for="cost-value">
+                  <input class="form-control" type="text">
+                </label>
+            </div>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <label class="container-checkbox">Employee Tax
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark-checkbox"></span>
+                </label>
+  
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <label class="container-checkbox">Employer Tax
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark-checkbox"></span>
+                </label>
+  
+              
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <label class="container-checkbox">RPF
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark-checkbox"></span>
+                </label>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9">
+                <label class="container-checkbox">SSO
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark-checkbox"></span>
+                </label>
+  
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <!-- <div class=""> -->
+            <label class="col-sm-3 col-form-label">Formula Type</label>
+  
+            <div class="col-sm-9">
+              <div style="display: flex;">
+                  <label class="container-radio">Flat
+                      <input type="radio" checked="checked" name="formulaType" (click)="showFlatFormulaType()" value="flat">
+                      <span class="checkmark-radio"></span>
+                    </label>
+                    <label class="container-radio">Formula
+                        <input type="radio" name="formulaType" value="formula" (click)="showFormulaType()">
+                        <span class="checkmark-radio"></span>
+                      </label>
+  
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+
+        </form>
+            </div> 
+          </div>
+
+
+          <div class="form-group row">
+              <div class="col-sm-2"></div>
+              <label class="col-sm-1 col-form-label">Value</label>
+              <div class="col-sm-5">
+  
+                <textarea *ngIf="formulaType" class="form-control" cols="5" rows="5" placeholder="e.g. 2500"></textarea>
+
+                <div *ngIf="!formulaType" class="border border-secondary rounded p-4">
+                  <div class="row">
+  
+                    <div class="col-sm-4">
+                      <p>Brackets</p>
+                    </div>
+
+                    <div class="col-sm-8">
+                      <select class="form-control">
+                          <option value="">--Select--</option>
+                          <option>Option 1</option>
+                      </select>
+                    </div>
+  
+                    <div class="col-sm-4 mt-3">
+                        <p>Abbreviation</p>
+                    </div>
+                    <div class="col-sm-8 mt-3">
+                        <select class="form-control">
+                            <option value="">BSC</option>
+                            <option>Option 1</option>
+                        </select>
+                    </div>
+  
+                    <div class="col-sm-4 mt-3">
+                        <p>Operator</p>
+                    </div>
+                    <div class="col-sm-8 mt-3">
+                        <select class="form-control">
+                            <option value="">*(Multiply)</option>
+                            <option>Option 1</option>
+                        </select>
+                    </div>
+  
+                    <div class="col-sm-12 mt-3">
+                        <button class="btn btn-primary btn-sm rounded pull-right">Add</button>
+                    </div>
+   
+                    <div class="col-sm-12 mt-3">
+                        <textarea class="form-control"> 2.5 </textarea> 
+                    </div>
+  
+                    <div class="col-sm-12 mt-3">
+                        <button class="btn btn-success header-button text-white pull-right">Validate</button>
+                    </div>
+  
+                  </div>
+                </div>  
+  
+              </div>
+          </div>
+          </app-card>
+      </div>   
+  </div>
+  

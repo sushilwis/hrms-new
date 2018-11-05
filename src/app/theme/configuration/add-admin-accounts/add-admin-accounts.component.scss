@@ -1,0 +1,16 @@
+.form-center{
+	margin: 20px auto
+}
+
+
+.header-boxshadow{
+    box-shadow: 0px 3px 3px #e0e0e0 !important;
+    position: fixed;
+    width: 94%;
+    z-index: 99;
+}
+
+
+input.form-control, input.form-control:focus, input.form-control:hover {
+  border: 1px solid #959595;
+}

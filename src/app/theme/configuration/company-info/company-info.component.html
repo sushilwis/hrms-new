@@ -1,0 +1,262 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-9">
+          <div class="page-header-title">
+            <!-- <span class="float-left"> -->
+            <!-- <i class="fa fa-chevron-left" aria-hidden="true"></i> -->
+            <!-- </span> -->
+            <span>
+              <h4 class="m-b-10 headtext">
+                <a class="h4" [routerLink]="['/config/home']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Company Info
+              </h4>
+            </span>
+            <!--<p class="m-b-0" *ngIf="breadcrumb.caption">{{ breadcrumb.caption }}</p>-->
+          </div>
+          <!-- <ul class="breadcrumb">
+                    <li class="breadcrumb-item">
+                      <a [routerLink]="['/dashboard/default/']">
+                        <i class="feather icon-home"></i>
+                      </a>
+                    </li>
+                    <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs;">
+                      <a [ngClass]="breadcrumb.status === false ? 'not-active': ''" [routerLink]="breadcrumb.url">{{breadcrumb.label}}</a>
+                    </li>
+                  </ul> -->
+        </div>
+        <div class="col-md-3">          
+          <!-- <a class="btn btn-disabled float-right btn-sm ml-1">
+            <i></i>
+            Finish
+          </a>
+          <a class="btn btn-primary float-right btn-sm ml-1">
+            <i></i>
+            Save & Continue
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="page-body body-padding">
+  <div class="row">
+    <div class="col-md-10 offset-md-1" style="margin-top: 150px;">
+        <div class="card-header-all">
+            <h5>Company Info</h5>
+          </div>
+      <app-card [cardOptionBlock]="true">
+
+        <wizard #wizard class="arc-wizard" navBarLayout="large-filled-symbols">  
+          <wizard-step stepTitle="General Info">
+            <div class="row">
+              <div class="col-md-2">
+                <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
+                  [uploader]="uploader" class="well ngb-drop-zone text-center ripple light logo-drop-zone">
+                  YOUR LOGO HERE
+                </div>
+                <label class="upload-photo"><i class="fa fa-upload" aria-hidden="true"></i> Upload Photo</label>
+              </div>
+              <div class="col-md-10">
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Company Code</b>*</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Comoany Name(EN)</b>*</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Comoany Name(TH)</b>*</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Address</b></label>
+                  <div class="col-sm-5">
+                    <textarea class="form-control"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>City</b></label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option value="">--Select--</option>
+                      <option>Kolkata</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Country</b></label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option value="">--Select--</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Phone</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Fax</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 mt-10 text-right float-lg-right">
+                <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+              </div>
+              <div class="col-sm-10 offset-sm-2 mt-10 text-right float-lg-right position">
+                <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                <button type="button" class="btn btn-light btn-disable btn-sm header-button table-action-btn">Finish</button>
+            </div>
+            </div>
+          </wizard-step>
+
+
+          <wizard-step stepTitle="Tax Info">
+            <div class="">
+              <form action="javascript:">
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Branch</b></label>
+                  <div class="col-sm-5">
+                    <select class="form-control">
+                      <option value="">--Select Branch--</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Tax Number</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>SSO Number</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Social Security Number</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Provident Fund</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <p style="color: brown;" class="text-left">* All fields are compulsory</p>
+
+              </form>
+
+              <div class="col-sm-10 offset-sm-2 mt-10 text-right float-lg-right position">
+                <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                <button type="button" class="btn btn-light btn-disable btn-sm header-button table-action-btn">Finish</button>
+            </div>
+
+              <div class="col-sm-12 btn-group mt-10">
+                <!-- <button type="button" class="btn btn-secondary btn-sm float-left mr-18" previousStep>Back</button> -->
+                <button type="button" class="btn btn-primary btn-sm float-right header-button" nextStep>Save & Continue</button>
+              </div>
+            </div>
+          </wizard-step>
+
+
+          <wizard-step stepTitle="Bank Info">
+            <div class="">
+              <form action="javascript:">
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Bank Code</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Bank Name</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Bank Short Name</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Account Number</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>SWIFT Code</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label"><b>Branch Code</b></label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+
+              </form>
+
+
+              <div class="col-sm-12 btn-group mt-10">
+                <!-- <button type="button" class="btn btn-danger btn-sm float-right" resetWizard>Finish</button> -->
+              </div>
+              <div class="col-sm-10 offset-sm-2 mt-10 text-right float-lg-right position">
+                <button type="button" class="btn btn-success btn-sm header-button" [routerLink]="['/config/home']">Finish</button>
+              </div>
+            </div>
+          </wizard-step>
+        </wizard>
+        
+      </app-card>
+    </div>
+  </div>
+</div>

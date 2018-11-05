@@ -1,0 +1,109 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-9">
+          <div class="page-header-title">
+            <span>
+              <h4 class="m-b-10 headtext">
+                <a class="h4" [routerLink]="['/config/admin-accounts']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Add Administrator User
+              </h4>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <a class="btn btn-success float-right btn-sm ml-1 header-button" [routerLink]="['/config/admin-accounts']">
+            <i></i>
+            Finish
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="page-body body-padding">  
+    <div class="col-md-10 offset-md-1">
+    <app-card [classHeader]="true" [cardOptionBlock]="true">
+      <form action="javascript:">
+        <div class="col-md-8">
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Username</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Company Code</label>
+            <div class="col-sm-7">
+              <input type="password" class="form-control ">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Rights</label>
+            <div class="col-sm-7">
+              <label class="container-checkbox success">Payrole Management
+                  <input type="checkbox">
+                  <span class="checkmark-checkbox"></span>
+              </label>  
+              <label class="container-checkbox success">Leave Management
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark-checkbox"></span>
+              </label>
+
+              <label class="container-checkbox success">Time Management
+                  <input type="checkbox">
+                  <span class="checkmark-checkbox"></span>
+              </label>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Permission</label>
+            <div class="col-sm-7" style="display: flex;">
+              <label class="container-radio">Read-only
+                <input type="radio" checked="checked" name="radio">
+                <span class="checkmark-radio"></span>
+              </label>
+              <label class="container-radio">Editable
+                <input type="radio" checked="checked" name="radio">
+                <span class="checkmark-radio"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Password</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3 col-form-label">Confirm Password</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </app-card>
+    </div>
+</div>

@@ -1,0 +1,208 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-9">
+          <div class="page-header-title">
+            <!-- <span class="float-left"> -->
+            <!-- <i class="fa fa-chevron-left" aria-hidden="true"></i> -->
+            <!-- </span> -->
+            <span>
+              <h5 class="m-b-10">
+                <!-- [routerLink]="[breadcrumb.backBtnLink]" -->
+                <!-- <a class="h4" [routerLink]="['/config/home']"> -->
+                <!-- <i class="m-b-10" class="fa fa-chevron-left mr-3" aria-hidden="true"></i> -->
+                <!-- </a> -->
+                Configuration
+              </h5>
+            </span>
+            <!--<p class="m-b-0" *ngIf="breadcrumb.caption">{{ breadcrumb.caption }}</p>-->
+          </div>
+          <!-- <ul class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a [routerLink]="['/dashboard/default/']">
+                  <i class="feather icon-home"></i>
+                </a>
+              </li>
+              <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs;">
+                <a [ngClass]="breadcrumb.status === false ? 'not-active': ''" [routerLink]="breadcrumb.url">{{breadcrumb.label}}</a>
+              </li>
+            </ul> -->
+        </div>
+        <div class="col-md-3">
+          <a class="btn btn-primary float-right btn-sm ml-1 header-button" [routerLink]="['/config/admin-accounts']">
+            <!-- <i></i> -->
+            + Add Admin
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="page-body body-padding">
+  <!-- <simple-notifications [options]="options"></simple-notifications> -->
+  <div class="row">
+    <div class="container">
+      <div class="heading-text">
+        <h3>Welcome to Cloudforce HR, John Doe</h3>
+        <p>Lorem Ipsum has been the industry's standred dummy text ever since the 1500s and scrambeld it to
+          type
+          seccimen.</p>
+      </div>
+      <ul class="progress-indicator stepped stacked m-b-50">
+        <li class="completed">
+          <span class="bubble"></span>
+          <span class="stacked-text">
+            <h3>Create Company Account</h3>
+            <div class="subdued">
+              <a class="sub-element" [routerLink]="['/config/company-info/']">
+                <div>
+                  <img src="assets/landing/images/account.png" />
+                  <p>Company Account</p>
+                </div>
+              </a>
+              <a class="sub-element" [routerLink]="['/config/organization-structure/']">
+                <div>
+                  <img src="assets/landing/images/organization.png" />
+                  <p>Organization Structure</p>
+                </div>
+              </a>
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="bubble"></span>
+          <span class="stacked-text">
+            <h3>Cofigure Payroll Management</h3>
+            <div class="subdued">
+              <a class="sub-element" [routerLink]="['/config/period-definition/']">
+                <div>
+                  <img src="assets/landing/images/period.png" />
+                  <p>Period Definition</p>
+                </div>
+              </a>
+              <a class="sub-element" [routerLink]="['/config/create-paycode/']">
+                <div>
+                  <img src="assets/landing/images/paycode.png" />
+                  <p>Create Paycode </p>
+                </div>
+              </a>
+              <a class="sub-element" [routerLink]="['/config/create-payslip-format/']">
+                <div>
+                  <img src="assets/landing/images/payslip.png" />
+                  <p>Create Payslip Format </p>
+                </div>
+              </a>
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="bubble"></span>
+          <span class="stacked-text">
+            <h3>Configure Time Management</h3>
+            <div class="subdued">
+              <a class="sub-element" [routerLink]="['/config/create-shifts-overtime/']">
+                <div>
+                  <img src="assets/landing/images/overtime.png" />
+                  <p>Create Shifts/OverTime</p>
+                </div>
+              </a>
+              <a class="sub-element">
+                <div>
+                  <img src="assets/landing/images/hardware.png" />
+                  <p>Configure With Hardware </p>
+                </div>
+              </a>
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="bubble"></span>
+          <span class="stacked-text">
+            <h3>Configure Leave Management</h3>
+            <div class="subdued">
+              <a class="sub-element" [routerLink]="['/config/create-leaves/']">
+                <div>
+                  <img src="assets/landing/images/leaves.png" />
+                  <p>Create Leaves</p>
+                </div>
+              </a>
+            </div>
+          </span>
+        </li>
+        <li>
+          <span class="bubble"></span>
+          <span class="stacked-text">
+            <h3>Configure Employees Data</h3>
+            <div class="subdued">
+              <a class="sub-element" [routerLink]="['/config/manage-employees/']">
+                <div>
+                  <img src="assets/landing/images/employees.png" />
+                  <p>Manage Employees</p>
+                </div>
+              </a>
+              <a class="sub-element" [routerLink]="['/config/invite-employees/']">
+                <div>
+                  <img src="assets/landing/images/mails.png" />
+                  <p>Invite By Mails</p>
+                </div>
+              </a>
+            </div>
+          </span>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- <app-card [title]="'Right Nav Wizard'">
+        <wizard #wizard class="arc-wizard" navBarLayout="large-empty-symbols" navBarLocation="left">
+          <wizard-step stepTitle="Profile" navigationSymbol="1">
+            <div class="centered-content">
+              <div>
+                <h3>Content: Profile</h3>
+                <p>right nav</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
+      
+              <div class="btn-group mt-10">
+                <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+              </div>
+            </div>
+          </wizard-step>
+          <wizard-step stepTitle="Address" navigationSymbol="2">
+            <div class="centered-content">
+              <div>
+                <h3>Content: Address</h3>
+                <p>right nav</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
+      
+              <div class="btn-group mt-10">
+                <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+                <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+              </div>
+            </div>
+          </wizard-step>
+          <wizard-step stepTitle="Finished" navigationSymbol="3">
+            <div class="centered-content">
+              <div>
+                <h3>Content: Thank's</h3>
+                <p>right nav</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
+      
+              <div class="btn-group mt-10">
+                <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+                <button type="button" class="btn btn-danger btn-sm" resetWizard>Reset</button>
+              </div>
+            </div>
+          </wizard-step>
+        </wizard>
+      </app-card>       -->
+</div>

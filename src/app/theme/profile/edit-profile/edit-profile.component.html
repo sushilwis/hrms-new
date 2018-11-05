@@ -1,0 +1,1479 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+  
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/profile']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Edit John Doe
+                </h4>
+              </span>
+            </div>
+          </div>  
+  
+          <div class="col-md-5"></div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page-body body-padding">
+    <div class="row">
+      <div class="col-sm-10 offset-md-1" style="margin-top: 150px !important;">      
+        <div class="card-header-all">
+            <div class="col-md-12">
+                <p class="float-left">Personal</p>
+                <p class="float-right">Step 1 of 6</p>
+            </div>
+        </div>
+        <app-card>
+        <wizard #wizard class="arc-wizard" navBarLayout="large-filled-symbols">
+          <wizard-step stepTitle="Personal" navigationSymbol="" navigationSymbolFontFamily="FontAwesome"> 
+              <div class="row">
+                  <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                    <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                    <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+                  </div>
+              </div>  
+            
+              <div class="row">
+                  <div class="col-md-2 ">
+
+                      <div class="text-center upload-btn-wrapper">
+                          <img src="assets/images/avatar-4.jpg" alt="" class="img-fluid rounded">
+                          <label class="upload-photo-two"><i class="fa fa-upload" aria-hidden="true"></i> Upload Photo</label>
+                          <input type="file" class="" style="display: none;">
+                      </div>
+                    <!-- <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
+                      [uploader]="uploader" class="well ngb-drop-zone text-center ripple light logo-drop-zone">
+                      YOUR LOGO HERE
+                    </div> -->
+                    
+                  </div>
+                  <div class="col-md-10">
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Employee Code</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control" value="XYZ123">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Prefix*</label>
+                      <div class="col-sm-5">
+                          <select class="form-control">
+                              <option value="">Mr.</option>
+                          </select>
+                      </div>
+                    </div>
+    
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">First Name(EN)*</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control" value="John">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Middle Name(EN)*</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="Doe">
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Middle Name(TH)*</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="Middle">
+                        </div>
+                    </div> -->
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Last Name(EN)*</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="Doe">
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Last Name(TH)*</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control">
+                        </div>
+                    </div> -->
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Address 1*</label>
+                      <div class="col-sm-5">
+                        <textarea class="form-control">32/7, Bekar Street, Florida,544125</textarea>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Address 2</label>
+                      <div class="col-sm-5">
+                        <textarea class="form-control"></textarea>
+                      </div>
+                    </div>
+
+                    <!-- <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Address(TH)</label>
+                        <div class="col-sm-5">
+                          <textarea class="form-control"></textarea>
+                        </div>
+                    </div> -->
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Tel no.</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Mobile no.</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="858745412">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Personal Email</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="john@gmail.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Gender</label>
+
+                        <div class="col-sm-6">
+                          <div class="radio radio-default radio-inline">
+                            <label>
+                              <input checked="" name="radio" type="radio" checked="checked">
+                              <i class=""></i>Male
+                            </label>
+                            <label>
+                              <input checked="" name="radio" type="radio">
+                              <i class=""></i>Female
+                            </label>
+                          </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Date of Birth</label>
+                        <div class="col-sm-5">
+                          <div class="row">
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option value="">Day</option>
+                                    <option>1</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option value="">Month</option>
+                                    <option>jan</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option value="">Year</option>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Martial Status</label>
+
+                        <div class="col-sm-6">
+                          <div class="radio radio-default radio-inline">
+                            <label>
+                              <input checked="" name="radio" type="radio">
+                              <i class=""></i>Married
+                            </label>
+                            <label>
+                              <input checked="" name="radio" type="radio">
+                              <i class=""></i>Unmarried
+                            </label>
+                          </div>
+                        </div>
+                    </div>
+
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Nationality</label>
+                      <div class="col-sm-5">
+                        <select class="form-control">
+                          <!-- <option value="">--Select--</option> -->
+                          <option>Indian</option>
+                          <option>American</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                          
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Religion</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control" value="Judaism">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Blood Group*</label>
+                        <div class="col-sm-5">
+                          <select class="form-control">
+                            <!-- <option value="">--Select--</option> -->
+                            <option value="">O+</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Personal ID Card no.</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="45675766">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">ID Card Expiry Date</label>
+                        <div class="col-sm-5">
+                          <div class="row">
+                            <div class="col-md-6">
+                                <select class="form-control">
+                                    <option value="">MM</option>
+                                    <option>Jan</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-control">
+                                    <option value="">YYYY</option>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Passport no.</label>
+                      <div class="col-sm-5">
+                        <input type="text" class="form-control" value="ZP45233Y">
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Passport Expiry Date</label>
+                        <div class="col-sm-5">
+                          <div class="row">
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option value="">DD</option>
+                                    <option>1</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option value="">MM</option>
+                                    <option>jan</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control">
+                                    <option value="">YYYY</option>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Social Security no.*</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="7865DRY6">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Bank Code*</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="345445">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Bank Account no.*</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="2342346634322">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Tax no.*</label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" value="DSE4567">
+                        </div>
+                    </div>
+
+                  </div>
+    
+                  <div class="col-sm-12 mt-10 text-right float-lg-right">
+                    <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+                  </div>  
+                </div>    
+          </wizard-step>
+  
+  
+          <wizard-step stepTitle="Professional" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+            <div class="row">
+              <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+              </div>
+            </div>
+  
+  
+            <div class="row">
+                <div class="col-md-1"></div>
+    
+                <div class="col-md-7">
+                  <form action="">
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Source of Recruitment</label>
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Status of work</label>
+                        <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Job Title</label>
+                      <div class="col-sm-6">
+                        <select class="form-control">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Employment Type</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Employee Type</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Official Email</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+    
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Date of Joining</label>
+                      <div class="col-sm-6">
+                          <input type="date" class="form-control">
+                      </div>
+                    </div>
+    
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Probation Pass Date</label>
+                      <div class="col-sm-6">
+                          <input type="date" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Employment End Date</label>
+                      <div class="col-sm-6">
+                          <input type="date" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Branch</label>
+                      <div class="col-sm-6">
+                          <select class="form-control">
+                              <option>--Select--</option>
+                              <option>One</option>
+                            </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Division</label>
+                      <div class="col-sm-6">
+                          <select class="form-control">
+                              <option>--Select--</option>
+                              <option>One</option>
+                            </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Department</label>
+                      <div class="col-sm-6">
+                          <select class="form-control">
+                              <option>--Select--</option>
+                              <option>One</option>
+                            </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Section</label>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option>--Select--</option>
+                                <option>One</option>
+                              </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Sub-Section</label>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option>--Select--</option>
+                                <option>One</option>
+                              </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Location</label>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option>--Select--</option>
+                                <option>One</option>
+                              </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Level</label>
+                        <div class="col-sm-6">
+                            <select class="form-control">
+                                <option>--Select--</option>
+                                <option>One</option>
+                              </select>
+                        </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Occupation Group</label>
+                      <div class="col-sm-6">
+                        <select class="form-control">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Business Unit</label>
+                      <div class="col-sm-6">
+                        <select class="form-control">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Cost Center</label>
+                      <div class="col-sm-6">
+                        <select class="form-control">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Custom Group</label>
+                      <div class="col-sm-6">
+                        <select class="form-control">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                  </form>
+                </div>
+    
+                <div class="col-md-4"></div>
+
+                <div class="col-sm-12 mt-10 text-right float-lg-right">
+                  <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+                </div>
+              </div>
+          </wizard-step>
+  
+  
+  
+          <wizard-step stepTitle="Insurence/Tax" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+
+            <div class="row">
+              <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+              </div>
+            </div>
+  
+  
+            <div class="row">
+                <div class="col-md-1"></div>
+    
+                <div class="col-md-7">
+                  <form action="">
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">PF ID</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">PF effective date</label>
+                      <div class="col-sm-6">
+                          <input type="date" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Tax Status of Spouce</label>
+                      <div class="col-sm-6">
+                        <select class="form-control">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">No. of Childrens</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+    
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">YTD SSO</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">YTD Tax</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">YTD Taxable Income</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Previous Salary</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Previous YTD Tax</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Previous SSO</label>
+                      <div class="col-sm-6">
+                          <input type="text" class="form-control">
+                      </div>
+                    </div>
+    
+                    <div class="form-group row">
+                      <label class="col-sm-3 col-form-label">Income Tax Method</label>
+                      <div class="col-sm-6">
+                        <select class="form-control">
+                          <option>--Select--</option>
+                          <option>One</option>
+                        </select>
+                      </div>
+                    </div>
+    
+                    <p>
+                      *All fields are compulsory
+                    </p>
+    
+                  </form>
+                </div>
+    
+                <div class="col-md-4"></div>
+
+                <div class="col-sm-12 mt-10 text-right float-lg-right">
+                  <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+                </div> 
+              </div>
+          </wizard-step>
+  
+  
+  
+          <wizard-step stepTitle="Allocation" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+            <div class="row">
+             
+              <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+              </div>
+            </div>
+  
+  
+            <div class="row">
+                <div class="col-md-12">
+                  <squeezebox [multiple]="false">
+
+                    <sb-item [collapsed]="true" class="accordion-panel">
+                      <sb-item-head class="accordion-heading accordion-msg">
+                        <!-- <i class="pull-left mt-1" [ngClass]="{
+                                'fa fa-l fa-chevron-up': [collapsed] == false,
+                                'fa fa-l fa-chevron-down': [collapsed] == true
+                              }"
+                          aria-hidden="true"></i> -->
+                        Paycode Allocation
+                        <!-- <a [routerLink]="" class="btn btn-primary float-right btn-sm ml-1" (click)="modalDefault.show()">
+                          <i class="fa fa-plus"></i>
+                          Add
+                        </a> -->
+                      </sb-item-head>
+
+                      <sb-item-body class="accordion-content">
+                        <div class="accordion-desc">         
+            
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <div class="row">
+
+                              <div class="col-sm-6" style="padding: 0px !important;">
+                                <label>Paycodes List</label>
+                                <div style="border-top: 1px solid #000000; border-right: 1px solid #000000;">
+                                <div class="">
+                                <label class="container-checkbox">BSC
+                                      <input type="checkbox" >
+                                      <span class="checkmark-checkbox"></span>
+                                  </label>
+                                </div>
+                                <div class="">
+                                    <label class="container-checkbox">OT1
+                                        <input type="checkbox" >
+                                        <span class="checkmark-checkbox"></span>
+                                    </label>
+                                  </div>
+
+                                  <div class="">
+                                      <label class="container-checkbox">BNS1
+                                          <input type="checkbox" >
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                    </div>
+                                  <div class="">
+                                      <label class="container-checkbox">BNS2
+                                          <input type="checkbox" >
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                       
+                                  </div>
+                                  <div class="">
+                                      <label class="container-checkbox">ML
+                                          <input type="checkbox" >
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                  </div>
+                                  <div class="">
+                                      <label class="container-checkbox">TA
+                                          <input type="checkbox" >
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+
+                                  </div>
+                                  <div class="">
+                                      <label class="container-checkbox">BSC
+                                          <input type="checkbox" >
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                     
+                                  </div>
+                                  <div class="">
+                                      <label class="container-checkbox">BSC
+                                          <input type="checkbox" >
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+
+                                  </div>
+                                  <div class="">
+                                      <label class="container-checkbox">BSC
+                                          <input type="checkbox" >
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+
+                                  </div>
+                                  <div class="">
+                                      <label class="container-checkbox">BSC
+                                          <input type="checkbox" >
+                                          <span class="checkmark-checkbox"></span>
+                                      </label>
+                                  </div>
+                                </div>
+
+                              </div>
+
+
+                              <div class="col-sm-6" style="padding: 0px !important;">
+                                <label>Allocated Paycode</label>
+                                <div style="border-top: 1px solid #000000;">
+                                <div class="">
+                                    <label class="border-checkbox-label" for="checkbox0">BSC</label>
+                                    <input type="text" class="w-25 pull-right" value="6000">
+                                </div>
+                                <div class="">
+                                    <label class="border-checkbox-label" for="checkbox0">OT1</label>
+                                    <input type="text" class="w-25 pull-right" value="6000">
+                                </div>
+                                <div class="">
+                                    <label class="border-checkbox-label" for="checkbox0">BNS1</label>
+                                    <input type="text" class="w-25 pull-right" value="6000">
+                                </div>
+                                <div class="">
+                                    <label class="border-checkbox-label" for="checkbox0">ML</label>
+                                    <input type="text" class="w-25 pull-right" value="6000">
+                                </div>
+                                <div class="">
+                                    <label class="border-checkbox-label" for="checkbox0">TA</label>
+                                    <input type="text" class="w-25 pull-right" value="6000">
+                                </div>
+                                </div>
+                              </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </sb-item-body>
+                    </sb-item>
+
+
+            
+            
+                    <sb-item class="accordion-panel">
+                      <sb-item-head class="accordion-heading accordion-msg">Shift Allocation
+                        <!-- <a [routerLink]="" class="btn btn-primary float-right btn-sm ml-1" (click)="modalDefault.show()">
+                          <i class="fa fa-plus"></i>
+                          Add
+                        </a> -->
+                      </sb-item-head>
+                      <sb-item-body class="accordion-content">
+                        <div class="accordion-desc">
+                          
+                          
+                            <div class="row">
+                                <div class="col-sm-10 offset-sm-1">
+                                  <div class="row">
+  
+                                  <div class="col-sm-6">
+                                    <p>Shift/Overtime List</p>
+  
+                                    <div class="">
+                                        <label class="container-checkbox">OT1
+                                            <input type="checkbox" >
+                                            <span class="checkmark-checkbox"></span>
+                                        </label>
+
+                                    </div>
+                                      <div class="">
+                                          <label class="container-checkbox">OT2
+                                              <input type="checkbox" >
+                                              <span class="checkmark-checkbox"></span>
+                                          </label>
+                                      </div>
+  
+                                      <div class="">
+                                          <label class="container-checkbox">S1
+                                              <input type="checkbox" >
+                                              <span class="checkmark-checkbox"></span>
+                                          </label>
+
+                                      </div>
+                                      <div class="">
+                                          <label class="container-checkbox">S2
+                                              <input type="checkbox" >
+                                              <span class="checkmark-checkbox"></span>
+                                          </label>
+                                      </div>
+                                  </div>
+  
+  
+                                  <div class="col-sm-6"></div>
+  
+                                  </div>
+                                </div>
+                              </div>
+            
+            
+                        </div>
+                      </sb-item-body>
+                    </sb-item>
+
+
+
+            
+            
+                    <sb-item class="accordion-panel">
+                      <sb-item-head class="accordion-heading accordion-msg">Leave Allocation
+                        <!-- <a [routerLink]="" class="btn btn-primary float-right btn-sm ml-1" (click)="modalDefault.show()">
+                          <i class="fa fa-plus"></i>
+                          Add
+                        </a> -->
+                      </sb-item-head>
+                      <sb-item-body class="accordion-content">
+                        <div class="accordion-desc">                
+  
+                            <div class="row">
+                                <div class="col-sm-12">
+                                  <div class="row">
+                                    
+
+                                    <table>
+                                        <tr>
+                                          <th width="">Product List</th>
+                                          <th>Allocated Paycoce</th>
+                                        </tr>
+                                        <tr>
+                                          
+                                        </tr>
+                                    </table>
+                                  <div class="col-sm-6">
+                                    <p>Leaves List</p>
+  
+                                    <div class="">
+                                        <label class="container-checkbox">AB
+                                            <input type="checkbox" >
+                                            <span class="checkmark-checkbox"></span>
+                                        </label>
+
+                                    </div>
+
+                                    <div class="">
+                                        <label class="container-checkbox">SL
+                                            <input type="checkbox" >
+                                            <span class="checkmark-checkbox"></span>
+                                        </label>
+
+                                    </div>
+                                  </div>
+  
+  
+                                  <div class="col-sm-6"></div>
+  
+                                  </div>
+                                </div>
+                              </div>
+            
+                        </div>
+                      </sb-item-body>
+                    </sb-item>
+                  </squeezebox>
+                </div>
+
+                <div class="col-sm-12 mt-10 text-right float-lg-right">
+                  <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+                </div>
+            
+              </div>
+          </wizard-step>
+
+
+  
+  
+          <wizard-step stepTitle="Permission" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+            <div class="row">
+              
+              <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                <button type="button" class="btn btn-primary btn-sm header-button" nextStep>Save & Continue</button>
+                <button type="button" class="btn btn-light btn-sm header-button">Finish</button>
+              </div>
+            </div>
+  
+  
+            
+            <div class="row">
+                <div class="col-md-12">
+                  <squeezebox [multiple]="false">
+
+                    <sb-item [collapsed]="true" class="accordion-panel">
+                      <sb-item-head class="accordion-heading accordion-msg">
+                        Leave Flow
+                      </sb-item-head>
+
+                      <sb-item-body class="accordion-content">
+                        <div class="accordion-desc">         
+            
+                          <div class="row">
+                            <div class="col-sm-10 offset-sm-1">
+
+                              <div class="row">
+                                <div class="col-sm-2">
+                                  <label>Approval Flow: </label>
+                                </div>
+                                <div class="col-sm-10">
+                                  <div>
+                                    <label>Approval 1 </label>
+                                    <label for="">
+                                        <select name="select" class="form-control">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </label>                                      
+                                  </div>
+                                  <div>
+                                      <label>Approval 2 </label>
+                                      <label>
+                                      <select name="select" class="form-control">
+                                          <option>--Select--</option>
+                                      </select>
+                                      </label>
+                                  </div>
+                                  <div>
+                                      <label>Approval 3 </label>
+                                    <label>
+                                      <select name="select" class="form-control">
+                                          <option>--Select--</option>
+                                      </select>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+
+
+                              <div class="row">
+                                  <div class="col-sm-2">
+                                    <label>Notification Recipient: </label>
+                                  </div>
+                                  <div class="col-sm-10">
+                                    <div>
+                                      <label>Recipient 1 </label>
+                                    <label>
+                                      <select name="select" class="form-control">
+                                          <option>--Select--</option>
+                                      </select>
+                                    </label>
+                                    </div>
+                                    <div>
+                                        <label>Recipient 2 </label>
+                                      <label>
+                                        <select name="select" class="form-control">
+                                            <option>--Select--</option>
+                                        </select>
+                                      </label>
+                                    </div>
+                                    <div>
+                                        <label>Recipient 3 </label>
+                                      <label>
+                                        <select name="select" class="form-control">
+                                            <option>--Select--</option>
+                                        </select>
+                                      </label>
+                                    </div>
+                                  </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </sb-item-body>
+                    </sb-item>
+
+
+            
+            
+                    <sb-item class="accordion-panel">
+                      <sb-item-head class="accordion-heading accordion-msg">Shift Flow
+                      </sb-item-head>
+                      <sb-item-body class="accordion-content">
+                        <div class="accordion-desc">   
+                              
+                            <div class="row">
+                                <div class="col-sm-10 offset-sm-1">
+  
+                                  <div class="row">
+                                    <div class="col-sm-2">
+                                      <label>Approval Flow: </label>
+                                    </div>
+                                    <div class="col-sm-10">
+                                      <div>
+                                        <label>Approval 1 </label>
+                                        <label for="">
+                                            <select name="select" class="form-control">
+                                                <option>--Select--</option>
+                                            </select>
+                                        </label>                                      
+                                      </div>
+                                      <div>
+                                          <label>Approval 2 </label>
+                                          <label for="">
+                                          <select name="select" class="form-control">
+                                              <option>--Select--</option>
+                                          </select>
+                                        </label>
+                                      </div>
+                                      <div>
+                                          <label>Approval 3 </label>
+                                          <label>
+                                          <select name="select" class="form-control">
+                                              <option>--Select--</option>
+                                          </select>
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+  
+  
+                                  <div class="row">
+                                      <div class="col-sm-2">
+                                        <label>Notification Recipient: </label>
+                                      </div>
+                                      <div class="col-sm-10">
+                                        <div>
+                                          <label>Recipient 1 </label>
+                                        <label>
+                                          <select name="select" class="form-control">
+                                              <option>--Select--</option>
+                                          </select>
+                                        </label>
+                                        </div>
+                                        <div>
+                                            <label>Recipient 2 </label>
+                                          <label>
+                                            <select name="select" class="form-control">
+                                                <option>--Select--</option>
+                                            </select>
+                                          </label>
+                                        </div>
+                                        <div>
+                                            <label>Recipient 3 </label>
+                                          <label>
+                                            <select name="select" class="form-control">
+                                                <option>--Select--</option>
+                                            </select>
+                                          </label>
+                                        </div>
+                                      </div>
+                                  </div>
+  
+                                </div>
+                              </div>
+            
+                        </div>
+                      </sb-item-body>
+                    </sb-item>
+                  </squeezebox>
+                </div> 
+                
+                <div class="col-sm-12 mt-10 text-right float-lg-right">
+                  <button type="button" class="btn btn-primary btn-sm mt-auto header-button" nextStep>Save & Continue</button>
+                </div> 
+              </div>                
+          </wizard-step>
+
+
+
+          <wizard-step stepTitle="Salary" navigationSymbol="" navigationSymbolFontFamily="FontAwesome">
+              <div class="row">
+               
+                <div class="col-sm-10 offset-sm-2 text-right float-lg-right position">
+                  <button type="button" class="btn btn-success btn-sm header-button" [routerLink]="['/config/manage-employees']">Finish</button>
+                </div>
+              </div>
+    
+    
+              
+              <div class="row">
+                  <div class="col-md-12">
+
+
+                      <div class="row">
+                          <div class="col-sm-10 offset-sm-1"> 
+                              <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">Basic Salary</label>
+                                  <div class="col-sm-6">
+                                    <input type="text" class="form-control">
+                                  </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">Payment Type</label>
+                                  <div class="col-sm-6">
+                                      <select class="form-control">
+                                          <option value="">--Select--</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                    <squeezebox [multiple]="false">
+
+                      <sb-item [collapsed]="true" class="accordion-panel">
+                        <sb-item-head class="accordion-heading accordion-msg">
+                          Fixed Allowance
+                        </sb-item-head>
+
+                        <sb-item-body class="accordion-content">
+                          <div class="accordion-desc">         
+              
+                            <div class="row">
+                              <div class="col-sm-10 offset-sm-1"> 
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Self Expence Deduction</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Self Exemption</label>
+                                      <div class="col-sm-6">
+                                        <!-- <select class="form-control">
+                                          <option>--Select--</option>
+                                          <option>One</option>
+                                        </select> -->
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Spouce Type</label>
+                                      <div class="col-sm-6">
+                                        <div class="row">
+                                          <div class="col-sm-4">With income</div>
+                                          <div class="col-sm-8">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">Without income</div>
+                                            <div class="col-sm-8">
+                                              <input type="text" class="form-control">
+                                            </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Children Allowance</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Parents (including spouce's parents)</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Parents insurance premium</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Life Insurance Premium</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Disable Persons Charity</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Housing Loan Interest</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Provident Fund</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Donation Charitable/contribution</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">RMF</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">LTF</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Domestic Expence Exemption</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Serverance</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label class="col-sm-3 col-form-label">Social Security Contribution</label>
+                                      <div class="col-sm-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </sb-item-body>
+                      </sb-item>
+
+
+              
+              
+                      <sb-item class="accordion-panel">
+                        <sb-item-head class="accordion-heading accordion-msg">
+                          Other Allowance
+                        </sb-item-head>
+                        <sb-item-body class="accordion-content">
+                          <div class="accordion-desc">   
+                                
+                              <div class="row">
+                                  <div class="col-sm-10 offset-sm-1">  
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Age > 65</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">AL1</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">AL2</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">AL3</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Children Allowance</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Donation</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Children Education Allowance</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Education Support Donation</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Insurance On Housing Loan</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Life Insurance</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Life Insurance of Spouce</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Life Insurance of Parents</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Personal Allowance</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Personol Allowance</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Provident Fund</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Sports Support Donation</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Spouce Allowance</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                          <label class="col-sm-3 col-form-label">Social Security</label>
+                                          <div class="col-sm-6">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                      </div>
+    
+                                  </div>
+                              </div>
+              
+                          </div>
+                        </sb-item-body>
+                      </sb-item>
+                    </squeezebox>
+                  </div>              
+                </div>                
+          </wizard-step>
+  
+        </wizard>
+        <!-- </app-card> -->
+        </app-card>
+        <!-- <button type="button" class="btn btn-info btn-sm ripple light m-r-50 pull-right" popoverTitle="Info color states" placement="bottom" [ngbPopover]="infoContent">Save & Continue</button> -->
+  
+      </div>
+    </div>
+</div>

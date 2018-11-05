@@ -1,0 +1,12 @@
+.apply-btn, .apply-btn:focus, .apply-btn:active, .apply-btn:active {
+    background: #ffffff !important;
+    padding: 5px 20px !important;
+    border-radius: 4px !important;
+    border:0px;
+    margin-left: 20px;
+    outline: none;
+}
+  
+.no-border, .no-border:hover, .no-border:active, .no-border:focus {
+    border: none;
+}

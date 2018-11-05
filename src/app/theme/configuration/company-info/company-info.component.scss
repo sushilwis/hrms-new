@@ -1,0 +1,37 @@
+.card-center{
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+.page-header h4{
+    color: #000000 !important;
+}
+
+.btn-disabled{
+    background-color: none !important;
+    border-color: none !important;
+}
+
+
+ .header-boxshadow{
+    box-shadow: 0px 3px 3px #e0e0e0 !important;
+    position: fixed;
+    width: 94%;
+    z-index: 99;
+  }
+
+  
+  .card .card-header{
+      position: absolute !important;
+      width: 100% !important;
+      top: -110px !important;
+      
+  }
+
+
+  input.form-control, input.form-control:focus, input.form-control:hover {
+    border: 1px solid #959595;
+  }
+
+

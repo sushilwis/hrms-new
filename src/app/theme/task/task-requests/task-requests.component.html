@@ -1,0 +1,109 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/task']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Task Requests
+                </h4>
+              </span>
+            </div>
+          </div>  
+  
+          <div class="col-md-5">  
+            
+              <a class="btn btn-light btn-sm float-right header-button" [routerLink]="['/task']">
+                <i></i>
+                My Task
+              </a>
+            
+            <a class="btn btn-sm bg-dark float-right header-button  text-white" [routerLink]="['/task/requests']">
+              <i></i>
+              Requests
+            </a>
+
+          </div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page-body">
+    <div class="container body-pad">
+      <div class="row">
+          <div class="col-sm-12 body-top-margin">
+
+            <div class="row">
+                  <div class="col-sm-9"></div>
+  
+                  <div class="col-md-3">
+                      <div class="form-group has-feedback has-search">
+                        <i class="fa fa-search form-control-feedback"></i>
+                        <input type="search" [(ngModel)]="filterQuery" class="form-control shadow border-rm" placeholder="Search">                        
+                      </div>
+                  </div>
+
+                  <!-- <div class="col-md-2">
+                    <a class="btn btn-primary btn-sm pull-right header-button" [routerLink]="['/task/new-task']">
+                    <i></i>
+                      New Task
+                    </a>
+                  </div> -->
+            </div>
+
+
+            <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+          [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+  
+              <ngx-datatable-column name="Sl No." [width]="120">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  001
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Task Title" [width]="120">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  Presentation
+                </ng-template>
+              </ngx-datatable-column>
+
+              <!-- <ngx-datatable-column name="End Date" [width]="120">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  10/02/2018
+                </ng-template>
+              </ngx-datatable-column> -->
+
+              <!-- <ngx-datatable-column name="Unit" [width]="110"></ngx-datatable-column> -->
+              <ngx-datatable-column name="Status" [width]="110"></ngx-datatable-column>
+
+              <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <button type="button" class="btn btn-success btn-sm datatable-button" style="margin-left: 0px !important;">Download</button>
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <a [routerLink]="['/task/presentation']">
+                    <button type="button" class="btn btn-light btn-sm datatable-button table-action-btn header-button" style="margin-left: 0px !important;">View</button>
+                  </a>  
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+
+          </div>
+      </div>
+    </div>
+</div>            
+

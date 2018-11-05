@@ -1,0 +1,156 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/attendance']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Regularization
+                </h4>
+              </span>
+            </div>
+          </div>  
+  
+          <div class="col-md-5">          
+            <a class="btn btn-sm bg-dark float-right header-button text-white">
+              <i></i>
+              Regularization
+            </a>
+
+            <a class="btn btn-light float-right btn-sm header-button table-action-btn" [routerLink]="['/attendance']">
+              <i></i>
+              Attendance
+            </a>
+
+          </div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="page-body">
+    <div class="container body-pad">
+      <div class="row">
+        <div class="col-sm-12 body-top-margin">
+
+
+          <app-card>
+            <div class="m-3">  
+              <div class="row">
+
+                <div class="col-sm-7">
+
+                  <div class="row mb-3">
+                    <div class="col-md-4">
+                      <p>Employee*</p>
+                    </div>
+                    <div class="col-md-8 search-icon">
+                      <input type="text" class="search-control">
+                      <i class="fa fa-search"></i>
+                    </div>
+                  </div>                   
+                <!-- </div> -->
+
+                <!-- <div class="col-sm-6"> -->
+                    <div class="row mb-3">
+                      <div class="col-md-4">
+                        <p>Type</p>
+                      </div>
+                      <div class="col-md-8">
+                          <select class="form-control">
+                              <option value="">--Select--</option>
+                              <option>Check-in</option>
+                              <option>Check-out</option>
+                              <option>Both</option>
+                          </select> 
+                      </div>
+                    </div>                   
+                <!-- </div> -->
+
+                <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <p>Date*</p>
+                      </div>
+                      <div class="col-sm-8">
+                          <div class="row">
+                              <div class="col-sm-6">
+                                <!-- <form class="form-inline" action="javascript:"> -->
+                                  <div class="form-group">
+                                    <div class="input-group">
+                                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="modelPopup" ngbDatepicker #d="ngbDatepicker">
+                                      <div class="input-group-append">
+                                        <span class="input-group-text" (click)="d.toggle()">
+                                          <i class="icofont icofont-ui-calendar"></i>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <!-- </form> -->
+                              </div>
+                              <div class="col-sm-6">
+                                <!-- <form class="form-inline" action="javascript:"> -->
+                                  <div class="form-group">
+                                    <div class="input-group">
+                                      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="modelPopup" ngbDatepicker #d="ngbDatepicker">
+                                      <div class="input-group-append">
+                                        <span class="input-group-text" (click)="d.toggle()">
+                                          <i class="icofont icofont-ui-calendar"></i>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <!-- </form> -->
+                              </div>
+                          </div>
+                      </div>
+                </div> 
+
+                <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <!-- <p>Time*</p> -->
+                      </div>
+                      <div class="col-sm-8">
+                          <!-- <div class="row">
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control"> 
+                              </div>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control"> 
+                              </div>
+                          </div> -->
+                      </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="offset-sm-4"></div>
+                    <div class="col-sm-8">
+                        <button class="btn btn-success float-right btn-sm header-button">
+                          Regularize
+                        </button>  
+                    </div>
+                </div>
+
+                </div> 
+
+                <div class="col-sm-6"></div>
+              </div>
+
+            </div>
+          </app-card>
+
+
+        </div>                
+      </div>
+    </div>
+</div>

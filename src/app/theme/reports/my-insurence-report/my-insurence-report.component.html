@@ -1,0 +1,198 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="" [routerLink]="['/reports/my-reports']">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Insurence Report
+                </h4>
+              </span>
+            </div>
+          </div> 
+
+  
+          <div class="col-md-5">
+            <a class="btn btn-success btn-sm float-right header-button text-white">
+              Download Report
+            </a>
+          </div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page-body">
+    <div class="container body-pad">
+      <div class="row">
+
+
+        <div class="col-sm-12 body-top-margin">
+          <app-card>
+            <div class="row">
+
+
+              <div class="col-sm-7">
+                  <div class="m-4">
+
+                      <div class="row mb-3">
+                          <div class="col-sm-3">
+                            <p>Date</p>
+                          </div>
+                          <div class="col-sm-8">
+                              <div class="row">
+                                  <div class="col-sm-6">
+                                      <input type="date" class="form-control"> 
+                                  </div>
+                                  <div class="col-sm-6">
+                                      <input type="date" class="form-control"> 
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="row mb-3">
+                        <div class="col-sm-3">
+                          <p>Department</p>
+                        </div>
+                        <div class="col-sm-8">
+                            <select class="form-control ">
+                                <option value="">--Select--</option>
+                                <option>Option-1</option>
+                            </select> 
+                        </div>
+                      </div> 
+                      
+                      
+                      <div class="row mb-3">
+                          <div class="col-sm-3">
+                            <p>Designation</p>
+                          </div>
+                          <div class="col-sm-8">
+                              <select class="form-control">
+                                  <option value="">--Select--</option>
+                                  <option>Option-1</option>
+                              </select> 
+                          </div>
+                      </div>
+
+
+                      <div class="row mb-3">
+                          <div class="col-sm-3">
+                            <p>Location</p>
+                          </div>
+                          <div class="col-sm-8">
+                              <select class="form-control">
+                                  <option value="">--Select--</option>
+                                  <option>Option-1</option>
+                              </select> 
+                          </div>
+                      </div>
+
+
+                      <div class="row mb-3">
+                          <div class="col-sm-3">
+                            <p>Grade</p>
+                          </div>
+                          <div class="col-sm-8">
+                              <select class="form-control">
+                                  <option value="">--Select--</option>
+                                  <option>Option-1</option>
+                              </select> 
+                          </div>
+                      </div>
+
+
+                      <div class="row mb-3">
+                          <div class="col-sm-3">
+                            <p>Group</p>
+                          </div>
+                          <div class="col-sm-8">
+                              <select class="form-control">
+                                  <option value="">--Select--</option>
+                                  <option>Option-1</option>
+                              </select> 
+                          </div>
+                      </div>
+                      
+          
+                      <div class="row mb-3">
+                          <div class="col-sm-3">
+                            <p>Employee code/Name</p>
+                          </div>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" value="John Doe">                         
+                          </div>
+                      </div>
+
+
+                      <div class="row mb-3">
+                          <div class="col-sm-3">
+                            <!-- <p>Employee code/Name</p> -->
+                          </div>
+                          <div class="col-sm-8">
+                              <a class="btn btn-success btn-sm float-right header-button text-white pull-right">Generate</a>      
+                          </div>
+                      </div>
+          
+                    </div>
+              </div>
+
+
+
+              <div class="col-sm-5"></div>
+
+
+            </div>            
+          </app-card>
+        </div>
+
+
+
+        <div class="col-sm-12">
+          <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+          [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+  
+              <ngx-datatable-column name="Employee code" [width]="120">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  XYZ003
+                </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Employee Name" [width]="120">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    John Doe
+                  </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column name="Download History" [width]="120">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    02/02/2018
+                  </ng-template>
+              </ngx-datatable-column>
+
+              <ngx-datatable-column [width]="100" [sortable]="false" style="width: 15% !important;">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <button type="button" class="btn btn-success btn-sm datatable-button" style="margin-left: 0px !important;">Download</button>
+                </ng-template>
+              </ngx-datatable-column>
+
+            </ngx-datatable>
+          </div>
+
+
+                
+      </div>
+    </div>
+</div>

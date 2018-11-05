@@ -1,0 +1,162 @@
+<div class="">
+    <div class="page-header header-boxshadow">
+      <div class="page-block">
+        <div class="row align-items-center">
+
+          <div class="col-md-7">
+            <div class="page-header-title">
+              <span>
+                <h4 class="m-b-10 headtext">
+                  <a class="">
+                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                  </a>
+                  Attendance
+                </h4>
+              </span>
+            </div>
+          </div>  
+  
+          <div class="col-md-5">          
+            
+            <a class="btn btn-light float-right btn-sm header-button table-action-btn" [routerLink]="['/attendance/regularization']">
+              <i></i>
+              Regularization
+            </a>
+
+            <a class="btn btn-sm bg-dark float-right header-button text-white" [routerLink]="['/attendance']">
+              <i></i>
+              Attendance
+            </a>
+
+          </div>  
+  
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="page-body">
+    <div class="container body-pad">
+      <div class="row">
+
+
+        <div class="col-sm-5 body-top-margin">
+          <button class="btn btn-success btn-sm ml-1 header-button">
+              <i></i>
+              Check-in
+          </button>
+          <button class="btn btn-light btn-sm ml-1 header-button">
+              <i></i>
+              check-out
+          </button>
+        </div>
+
+        <div class="col-sm-7 body-top-margin">  
+          <div class="row">
+            <div class="col-sm-2"><p>00:00 Hrs</p></div>
+            <div class="col-sm-8 text-center">
+              <div style="background:#fff; border-radius: 10px; width: 100%; height: 26px; display: flex; align-items: center; justify-items: center; justify-content: center;">
+                <span style="margin:0px; padding:0px; background: rgb(183, 222, 253); width: 70%; height: 26px; border-left: 2px solid rgb(77, 171, 245); border-right: 2px solid rgb(77, 171, 245); ">09:00 a.m - 19:30 p.m</span>
+              </div>
+            </div>
+            <div class="col-sm-2 text-right"><p>23:59 Hrs</p></div>
+          </div>      
+        </div>
+
+
+        <div class="col-sm-12">
+          <app-card>
+            <div class="m-1">         
+                  <!-- <div class="card-header"> -->
+
+                    <div class="row">
+                        <div class="col-md-4">
+                          <div class="btn-group pull-left color-heading">
+                            <a mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)">
+                              <i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i>
+                            </a>
+                            <!-- <button class="btn btn-default btn-outline btn-sm" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)"><i class="feather icon-arrow-right"></i></button> -->
+                            <!-- <button class="btn btn-primary btn-outline btn-sm m-l-5" mwlCalendarToday [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)"> Today </button> -->
+                          </div>
+                        </div>
+                        <div class="col-md-4 text-center color-heading">
+                          <h3>{{ viewDate | calendarDate:(view + 'ViewTitle') : locale }}</h3>
+                        </div>
+                        <div class="col-md-4 color-heading">
+                            <a class="pull-right" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)">
+                              <i class="fa fa-chevron-right fa-lg" aria-hidden="true"></i>
+                            </a>
+                          <!-- <div class="btn-group pull-right">
+                            <button class="btn btn-primary btn-sm" (click)="viewChange.emit('month')" [class.active]="view === 'month'">Month</button>
+                            <button class="btn btn-default btn-sm" (click)="viewChange.emit('week')" [class.active]="view === 'week'">Week</button>
+                            <button class="btn btn-primary btn-sm" (click)="viewChange.emit('day')" [class.active]="view === 'day'">Day</button>
+                          </div> -->
+                        </div>
+                    </div>
+
+
+                  <!-- </div> -->
+                  <div class="card-block">
+
+
+                    <ng-template #customCellTemplate let-day="day" let-locale="locale">
+                      <div class="cal-cell-top">
+                        <!-- <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{ day.badgeTotal }}</span> -->
+                        <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+                        <!-- <span class="cal-day-number">{{ day.date }}</span> -->
+                      </div>
+
+                      <small style="margin: 5px" *ngIf="(day.date | calendarDate:'monthViewDayNumber':locale) == 4">
+                        <div class="bg-success border border-success rounded">
+                            <p class="m-0 pl-1 text-white">P (9:00-18:02)</p>
+                        </div>
+                      </small>
+
+                      <small style="margin: 5px" *ngIf="(day.date | calendarDate:'monthViewDayNumber':locale) == 21">
+                        <div class="bg-danger border border-danger rounded">
+                            <p class="m-0 pl-1 text-white">A (9:00-18:02)</p>
+                        </div>
+                      </small>
+                    </ng-template>
+
+
+                    <div [ngSwitch]="view">
+                      <mwl-calendar-month-view
+                        [events]="events"
+                        *ngSwitchCase="'month'"
+                        [viewDate]="viewDate"
+                        [activeDayIsOpen]="activeDayIsOpen"
+                        [refresh]="refresh"
+                        [activeDayIsOpen]="activeDayIsOpen"
+                        [cellTemplate]="customCellTemplate"
+                        (dayClicked)="dayClicked($event.day)"
+                        (eventTimesChanged)="eventDropped($event)">
+                      </mwl-calendar-month-view>
+
+                      <mwl-calendar-week-view
+                        *ngSwitchCase="'week'"
+                        [viewDate]="viewDate"
+                        [refresh]="refresh"
+                        (eventTimesChanged)="eventDropped($event)">
+                      </mwl-calendar-week-view>
+                      
+                      <mwl-calendar-day-view
+                        *ngSwitchCase="'day'"
+                        [viewDate]="viewDate"
+                        [refresh]="refresh"
+                        (eventTimesChanged)="eventDropped($event)">
+                      </mwl-calendar-day-view>
+                    </div>
+                  </div>
+            </div>
+          </app-card>
+        </div>
+                
+      </div>
+    </div>
+</div>

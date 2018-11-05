@@ -1,0 +1,177 @@
+<div class="">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <div class="page-header-title">
+            <!-- <span class="float-left"> -->
+            <!-- <i class="fa fa-chevron-left" aria-hidden="true"></i> -->
+            <!-- </span> -->
+            <span>
+              <h4 class="m-b-10 headtext">
+                <!-- [routerLink]="[breadcrumb.backBtnLink]" -->
+                <a class="h4" [routerLink]="['/config/home']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Manage Employees
+              </h4>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-5">        
+          
+          <a class="btn btn-success float-right btn-sm ml-1 header-button" [routerLink]="['/config/home']">
+            <i></i>
+            Finish
+          </a>
+          <a class="btn btn-primary float-right btn-sm ml-1 header-button" [routerLink]="['/config/manage-employees/add']">
+            <i></i>
+            + Add
+          </a>
+          <a class="btn btn-outline-dark float-right btn-sm ml-1 header-button-3" (click)="modalDefault.show()">
+              <i></i>
+              Bulk Upload
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="page-body body-padding">
+  <div class="container">
+    <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+
+        <div class="col-sm-6">
+            <div>
+              <label class="label-control">
+                <select class="form-control no-border" name="select">
+                  <option value="opt1">Bulk Actions</option>
+                  <option value="opt2">Delete</option>
+                  <option value="opt2">Change</option>
+                </select>
+              </label>
+              <button type="button" class="btn btn-light datatable-button no-border shadow">Apply</button>
+            </div>
+        </div>
+
+        <div class="col-sm-3 offset-sm-3">
+            <div class="form-group has-feedback has-search">
+              <i class="fa fa-search form-control-feedback"></i>
+              <input type="search" [(ngModel)]="filterQuery" class="form-control no-border shadow border-rm" placeholder="Search">
+            </div>
+        </div>
+      </div>
+
+
+
+      <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+        [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows">
+
+        <ngx-datatable-column [width]="50" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false">
+
+          <ng-template class="datatable-checkbox" ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+            let-selectFn="selectFn">
+            <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+              <label class="container-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark-checkbox"></span>
+              </label>
+            </div>
+          </ng-template>
+
+          <ng-template class="datatable-checkbox" ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+            let-onCheckboxChangeFn="onCheckboxChangeFn">
+            <div class="checkbox-fade fade-in-default datatable-header-cell-label">
+              <label class="container-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark-checkbox"></span>
+              </label>
+            </div>
+          </ng-template>
+        </ngx-datatable-column>
+
+
+        <ngx-datatable-column name="Employee Code">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            XYZ049
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Employee Name">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            John Doe
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Designation"></ngx-datatable-column>
+        <ngx-datatable-column name="Location"></ngx-datatable-column>
+        
+        <ngx-datatable-column [sortable]="false" name="">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile']">View</button>
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column [sortable]="false" name="">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button type="button" class="btn btn-light btn-sm header-button  table-action-btn" [routerLink]="['/profile/edit']">Edit</button>
+          </ng-template>
+        </ngx-datatable-column>
+
+      </ngx-datatable>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<app-modal-basic #modalDefault>
+    <div class="app-modal-header">
+      <h4 class="modal-title">
+        <!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
+        Bulk Upload
+      </h4>
+      <button type="button" class="close basic-close" (click)="modalDefault.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="app-modal-body">
+  
+  
+      <form action="javascript:">
+
+        <div class="form-group row">          
+          <div class="col-sm-12">
+            <p>As per our format, you need to first download the format and then fill it to upload back.</p>
+            <div class="row">
+                <div class="col-sm-5 offset-sm-1">
+                  <p>Step 1:</p>
+                  <button class="btn btn-inverse btn-outline-inverse btn-block ripple light">Download Format</button>
+                </div>
+                <div class="col-sm-5">
+                  <p>Step 2:</p>
+                  <button class="btn btn-info btn-block ripple light">Upload File</button>
+                </div>
+            </div> 
+          </div>
+        </div>
+  
+      </form>
+  
+  
+    </div>
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-success ripple light header-button" (click)="modalDefault.hide()">Finish</button>
+    </div>
+  </app-modal-basic>
