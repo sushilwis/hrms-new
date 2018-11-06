@@ -1,34 +1,34 @@
 <div class="">
-    <div class="page-header header-boxshadow">
-      <div class="page-block">
-        <div class="row align-items-center">
+  <div class="page-header header-boxshadow">
+    <div class="page-block">
+      <div class="row align-items-center">
 
-          <div class="col-md-7">
-            <div class="page-header-title">
-              <span>
-                <h4 class="m-b-10 headtext">
-                  <a class="" [routerLink]="['/application/home']">
-                    <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
-                  </a>
-                  Requests
-                </h4>
-              </span>
-            </div>
-          </div>  
-  
-          <div class="col-md-5">
-            <a class="btn btn-light float-right btn-sm header-button table-action-btn" [routerLink]="['/application/home']">
-              <i></i>
-              Apply
-            </a>
-            <a class="btn bg-dark float-right btn-sm header-button text-white" [routerLink]="['/application/requests']">
-              <i></i>
-              Request
-            </a>
+        <div class="col-md-7">
+          <div class="page-header-title">
+            <span>
+              <h4 class="m-b-10 headtext">
+                <a class="" [routerLink]="['/application/home']">
+                  <i class="" class="fa fa-chevron-left headbackbtn" aria-hidden="true"></i>
+                </a>
+                Requests
+              </h4>
+            </span>
           </div>
+        </div>
+
+        <div class="col-md-5">
+          <a class="btn btn-light float-right btn-sm header-button table-action-btn" [routerLink]="['/application/home']">
+            <i></i>
+            Apply
+          </a>
+          <a class="btn bg-dark float-right btn-sm header-button text-white" [routerLink]="['/application/requests']">
+            <i></i>
+            Request
+          </a>
         </div>
       </div>
     </div>
+  </div>
 </div>
 
 
@@ -36,56 +36,59 @@
 
 
 <div class="page-body">
-    <div class="container body-pad">
-      <div class="row">
-        <div class="col-sm-12 body-top-margin">
-          
-            <div class="row">
-                <div class="col-sm-9"></div>
+  <div class="container body-pad">
+    <div class="row">
+      <div class="col-sm-12 body-top-margin">
 
-                <div class="col-md-3">
-                    <div class="form-group has-feedback has-search">
-                      <i class="fa fa-search form-control-feedback"></i>
-                      <input type="search" [(ngModel)]="filterQuery" class="form-control shadow border-rm" placeholder="Search">
-                    </div>
-                </div>
+        <div class="row">
+          <div class="col-sm-9"></div>
+
+          <div class="col-md-3">
+            <div class="form-group has-feedback has-search">
+              <i class="fa fa-search form-control-feedback"></i>
+              <input type="search" [(ngModel)]="filterQuery" class="form-control shadow border-rm" placeholder="Search">
             </div>
-
-
-            <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50" [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows" style="width: 100% !important;">
-              
-              <ngx-datatable-column name="Employee Name" style="width: 15% !important;">
-                  <ng-template let-row="row" ngx-datatable-cell-template>
-                      John Doe
-                  </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Application" style="width: 15% !important;">
-                
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Start Date" [width]="110">
-                  <ng-template let-row="row" ngx-datatable-cell-template>
-                    01/02/2018
-                  </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="End Date" [width]="110">
-                  <ng-template let-row="row" ngx-datatable-cell-template>
-                    05/02/2018
-                  </ng-template>
-              </ngx-datatable-column>
-
-              <ngx-datatable-column name="Unit" [width]="80"></ngx-datatable-column>
-              <ngx-datatable-column name="Status" [width]="90"></ngx-datatable-column>
-              
-              <ngx-datatable-column [width]="100" [sortable]="false" name="">
-                <ng-template let-row="row" ngx-datatable-cell-template>
-                  <a class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;" [routerLink]="['/application/personal-leave']">View</a>
-                </ng-template>
-              </ngx-datatable-column>              
-            </ngx-datatable>
+          </div>
         </div>
+
+
+        <ngx-datatable class="data-table fullscreen" [columnMode]="'force'" [scrollbarH]="true" [headerHeight]="50"
+          [footerHeight]="0" [rowHeight]="50" [scrollbarV]="true" [scrollbarH]="true" [rows]="rows" style="width: 100% !important;">
+
+          <ngx-datatable-column name="Employee Name" style="width: 15% !important;">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              John Doe
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Application" style="width: 15% !important;">
+
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Start Date" [width]="110">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              01/02/2018
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="End Date" [width]="110">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              05/02/2018
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column name="Unit" [width]="80"></ngx-datatable-column>
+          <ngx-datatable-column name="Status" [width]="90">
+          </ngx-datatable-column>
+
+          <ngx-datatable-column [width]="100" [sortable]="false" name="">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              <a class="btn btn-light btn-sm datatable-button table-action-btn" style="margin-left: 0px !important;"
+                [routerLink]="['/application/personal-leave']">View</a>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
       </div>
     </div>
-</div> 
+  </div>
+</div>

@@ -247,3 +247,50 @@ ngx-datatable.data-table{
     font-size: 9px;
     padding: 0px 5px;
 }
+
+.left-side-container{
+    background: #424242;
+    width: 87px;
+    height: 100%;
+    float: left;
+    padding: 1rem 0rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+
+}
+.main-menu-header{
+    text-align: center;
+    margin: 0px auto;
+    padding-bottom: 2rem;
+}
+.img-menu-user{
+    width: 80%;
+}
+.main-icons{
+    margin-bottom: 2rem;
+}
+.main-icons ul li{
+    margin-bottom: 1rem;
+}
+.main-icons ul li a, .main-icons ul li a i{
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    margin: 0px auto;
+}
+.main-icons ul li span{
+    font-size: 0.6rem;
+}
+.main-icons ul li a i{
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+.pcoded[theme-layout="vertical"] .pcoded-container{
+    overflow: visible !important;
+}
+.left-side-all-container{
+
+}
