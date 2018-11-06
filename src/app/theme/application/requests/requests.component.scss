@@ -1,3 +1,9 @@
 datatable-body.datatable-body {
   margin-top: 15px !important;
 }
+.datatable-body-cell-label span [title~=Approved] {
+  color: #e00000 !important;
+}
+.datatable-body-cell-label span [title~=Rejected] {
+  color: #e00000 !important;
+}

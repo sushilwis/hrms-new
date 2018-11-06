@@ -8,138 +8,88 @@
     <div class="pcoded-main-container" [style.margin-top]="headerFixedMargin">      
       <div class="pcoded-wrapper">
 
-        <nav id="main_navbar" class="pcoded-navbar" (clickOutside)="onClickedOutsideSidebar($event)" [exclude]="'#mobile-collapse'"
-          [attr.navbar-theme]="navBarTheme" [attr.active-item-theme]="activeItemTheme" sub-item-theme="theme2"
-          active-item-style="style0" [attr.pcoded-header-position]="pcodedHeaderPosition" [attr.pcoded-navbar-position]="pcodedSidebarPosition"
-          [style.top]="headerFixedTop" [style.height]="sidebarFixedNavHeight" (mouseleave)="hoverOutsideSidebar()">
-          <div [style.max-width]="'235px'"  [config]="config"
-            [ngClass]="perfectDisable" >
-            <div class="main-menu" appAccordion >
-              <div class="" >
-                <div class="main-menu-header" >
-                  <img class="img-menu-user img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image">                  
-                </div>
-              </div>
-
-
-
-
-              <div *ngFor="let asideItems of menuItems.getAll()" class="d-color">
-                <ul class="pcoded-item pcoded-left-item" [attr.item-border]="itemBorder" [attr.item-border-style]="itemBorderStyle"
-                  [attr.subitem-border]="subItemBorder" *ngFor="let asideItem of asideItems.main" appAccordionLink
-                  group="{{asideItem.state}}">
-
-                  <li [routerLinkActive]="['active']" *ngIf="asideItem.type === 'link'" appAccordionLink group="{{asideItem.state}}">
-                      <a [routerLinkActive]="['active']" class="ripple" 
-                      [routerLink]="[asideItem.link]" appAccordionToggle *ngIf="asideItem.main_state; else mainContent">
-                        <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
-                        <span class="pcoded-mtext">{{ asideItem.name }}</span>
-                        <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
-                        <span class="pcoded-mcaret"></span>
-                      </a>
-                    <ng-template #mainContent>
-                      <a [routerLinkActive]="['active']" class="ripple" [routerLink]="[asideItem.link]" appAccordionToggle>
-                        <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
-                        <span class="pcoded-mtext">{{ asideItem.name }}</span>
-                        <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
-                        <span class="pcoded-mcaret"></span>
-                      </a>
-                    </ng-template>
-                  </li>
-
-
-                  <li (mouseleave)="fireClickLeave($event)" [routerLinkActive]="['active']" *ngIf="asideItem.type === 'sub'"
-                    class="pcoded-hasmenu" [attr.dropdown-icon]="dropDownIcon" [attr.subitem-icon]="subItemIcon"
-                    appAccordionLink group="{{asideItem.state}}">
-                    <a (mouseover)="fireClick($event)" [routerLinkActive]="['active']" [routerLink]="[asideItem.link]"
-                      appAccordionToggle>
-                      <div class="ripple menu-ripple"></div>
-                      <span class="pcoded-micon"><i class="{{ asideItem.icon }}"></i><b>{{ asideItem.short_label }}</b></span>
-                      <span class="pcoded-mtext">{{ asideItem.name }}</span>
-                      <span class="pcoded-mcaret"></span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-
-
-
-              
-                  <!-- <div class="normal-icon">              
-                    <div *ngFor="let asideItems of menuItems.getAll()" class="d-color">
-                      <ul class="pcoded-item pcoded-left-item" [attr.item-border]="itemBorder" [attr.item-border-style]="itemBorderStyle"
-                        [attr.subitem-border]="subItemBorder" *ngFor="let asideItem of asideItems.main" appAccordionLink
-                        group="{{asideItem.state}}">
-
-                        <li (mouseleave)="fireClickLeave($event)" [routerLinkActive]="['active']" *ngIf="asideItem.type === 'sub-down'"
-                          class="pcoded-hasmenu ripple" [attr.dropdown-icon]="dropDownIcon" [attr.subitem-icon]="subItemIcon"
-                          appAccordionLink group="{{asideItem.state}}">
-
-                          <a (mouseover)="fireClick($event)" [routerLinkActive]="['active']" [routerLink]="[asideItem.link]"  appAccordionToggle>
-                            <div class="ripple menu-ripple"></div>
-                            <span class="pcoded-micon">
-                              <i class="{{ asideItem.icon }}"></i>
-                              <b>{{ asideItem.short_label }}</b>
-                            </span>
-                            <span *ngFor="let asideBadge of asideItem.badge" class="pcoded-badge label label-{{ asideBadge.type }}">{{asideBadge.value}}</span>
-                            <span class="pcoded-mcaret"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div> -->
-
-
-                  <!-- <div class="dropdown" style="float:left;">
-                    <button class="dropbtn">Left</button>
-                    <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
-                    </div>
-                  </div> -->
-                  <!-- <button type="button" class="btn btn-success ripple light" placement="right" ngbTooltip="tooltip on right">right
-                    </button> -->
-                <div class="left-side-menu">
-                  <ul>
-                    <li>
-                      <i class="fa fa-file-text" aria-hidden="true"></i>                   
-                    </li>
-
-                    <li class="dropdown-css">
-                      <i class="fa fa-briefcase" aria-hidden="true"></i>
-                      <ul class="dropdown-content">
-                          <li class="menu-dropdown"><a [routerLink]="['/config/home']">Configuration</a></li>
-                          <li class="menu-dropdown"><a [routerLink]="['/dashboard/directory']">Directory</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                      <i class="fa fa-question-circle"></i>
-                    </li>
-                    <li class="dropdown-css"><i class="fa fa-user"></i>
-                      <ul class="dropdown-content">
-                          <li class="menu-dropdown"><a [routerLink]="['/profile/home']">My Profile</a></li>
-                          <li class="menu-dropdown"><a [routerLink]="['/profile/registration']">Resignation</a></li>
-                          <li class="menu-dropdown"><a [routerLink]="['/profile/change-password']">Change Password</a></li>
-                          <li class="menu-dropdown"><a [routerLink]="['/auth/login/simple']">Log Out</a></li>
-                        </ul>
-                    </li>
-                  </ul>
-                </div>
-                
-              <p class="shot-p">Logged in as:</p>
-              <p class="shot-p-green">CFHR/Client</p>              
-            </div>
-
-            <p class="shot-p-2">Powered By:</p>
-            <p class="shot-p-vailot">Cloudforce HR</p>
-            <div class="language">
-              <a href=""> TH</a> <a href="">EN</a>
-            </div>
+      <div class="left-side-container">
+        <div class="left-side-all-container">
+        <div class="manu-container" >
+          <div class="main-menu-header" >
+            <img class="img-menu-user img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image">                  
           </div>
-        </nav>
+        </div>
+        <div class="main-icons">
+          <ul>
+            <li>
+              <a href=""> <i class="fas fa-home"></i> 
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href=""> <i class="far fa-file-alt"></i>
+              <span>Application</span>
+              </a>
+            </li>
+            <li>
+              <a href=""> <i class="far fa-calendar-minus"></i>
+                <span>Attendance</span>
+              </a>
+            </li>
+            <li>
+              <a href=""> <i class="fas fa-user"></i>
+              <span>Employees</span>
+              </a>
+            </li>
+            <li>
+              <a href=""> <i class="fas fa-money-bill-alt"></i> 
+              <span>Payroll</span>
+              </a>
+            </li>
+            <li>
+              <a href=""> <i class="fas fa-briefcase"></i>
+              <span>Reports</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+        
+        <div class="manu-items">
+          <div class="left-side-menu">
+            <ul>
+              <li>
+                <i class="fa fa-file-text" aria-hidden="true"></i>                   
+              </li>
+
+              <li class="dropdown-css">
+                <i class="fa fa-briefcase" aria-hidden="true"></i>
+                <ul class="dropdown-content">
+                    <li class="menu-dropdown"><a [routerLink]="['/config/home']">Configuration</a></li>
+                    <li class="menu-dropdown"><a [routerLink]="['/dashboard/directory']">Directory</a></li>
+                  </ul>
+              </li>
+
+              <li>
+                <i class="fa fa-question-circle"></i>
+              </li>
+              <li class="dropdown-css"><i class="fa fa-user"></i>
+                <ul class="dropdown-content">
+                    <li class="menu-dropdown"><a [routerLink]="['/profile/home']">My Profile</a></li>
+                    <li class="menu-dropdown"><a [routerLink]="['/profile/registration']">Resignation</a></li>
+                    <li class="menu-dropdown"><a [routerLink]="['/profile/change-password']">Change Password</a></li>
+                    <li class="menu-dropdown"><a [routerLink]="['/auth/login/simple']">Log Out</a></li>
+                  </ul>
+              </li>
+            </ul>
+          </div>
+          
+        <p class="shot-p">Logged in as:</p>
+        <p class="shot-p-green">CFHR/Client</p>  
+        </div>
+        <p class="shot-p-2">Powered By:</p>
+        <p class="shot-p-vailot">Cloudforce HR</p>
+        <div class="language">
+          <a href=""> TH</a> <a href="">EN</a>
+        </div>
+      </div>
+      </div>
 
 
         <div class="pcoded-content">
