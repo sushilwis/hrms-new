@@ -4,7 +4,7 @@ import { FormWizardsComponent } from './form-wizards.component';
 import {FormWizardsRoutingModule} from './form-wizards-routing.module';
 import {SharedModule} from '../../../shared/shared.module';
 import {ArchwizardModule} from 'ng2-archwizard/dist';
-import { WizardBasicComponent } from './wizard-basic/wizard-basic.component';
+// import { WizardBasicComponent } from './wizard-basic/wizard-basic.component';
 import { WizardNavbarLgComponent } from './wizard-navbar-lg/wizard-navbar-lg.component';
 import { WizardNavbarLgIconComponent } from './wizard-navbar-lg-icon/wizard-navbar-lg-icon.component';
 import { WizardCustomComponent } from './wizard-custom/wizard-custom.component';
@@ -20,7 +20,7 @@ import { WizardNavbarRightComponent } from './wizard-navbar-right/wizard-navbar-
   ],
   declarations: [
     FormWizardsComponent,
-    WizardBasicComponent,
+    // WizardBasicComponent,
     WizardNavbarLgComponent,
     WizardNavbarLgIconComponent,
     WizardCustomComponent,
