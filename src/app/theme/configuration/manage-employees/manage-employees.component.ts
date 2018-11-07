@@ -1,22 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-manage-employees',
-  templateUrl: './manage-employees.component.html',
-  styleUrls: ['./manage-employees.component.scss',
-  '../../../../assets/icon/icofont/css/icofont.scss'
+  selector: "app-manage-employees",
+  templateUrl: "./manage-employees.component.html",
+  styleUrls: [
+    "./manage-employees.component.scss",
+    "../../../../assets/icon/icofont/css/icofont.scss"
   ]
 })
 export class ManageEmployeesComponent implements OnInit {
+  filterQuery: any;
 
   public rows = [
-    { employeecode: 'AB', employeename: 'Absent', designation: 'Manager', location: 'Mumbai'},
-    { employeecode: 'SL', employeename: 'Sick Leave', designation: 'Manager', location: 'Chennai'}    
+    {
+      employeecode: "AB",
+      employeename: "Absent",
+      designation: "Manager",
+      location: "Mumbai"
+    },
+    {
+      employeecode: "SL",
+      employeename: "Sick Leave",
+      designation: "Manager",
+      location: "Chennai"
+    }
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-directory',
-  templateUrl: './directory.component.html',
-  styleUrls: ['./directory.component.scss']
+  selector: "app-directory",
+  templateUrl: "./directory.component.html",
+  styleUrls: ["./directory.component.scss"]
 })
 export class DirectoryComponent implements OnInit {
+  filterQuery: any;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

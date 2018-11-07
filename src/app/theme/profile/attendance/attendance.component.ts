@@ -1,5 +1,10 @@
 // import { Component, OnInit } from '@angular/core';
-import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewEncapsulation
+} from "@angular/core";
 
 import {
   CalendarEvent,
@@ -7,47 +12,56 @@ import {
   CalendarEventAction,
   CalendarDateFormatter,
   DateFormatterParams
-} from 'angular-calendar';
+} from "angular-calendar";
 
-import { Subject } from 'rxjs/Subject';
+import { Subject } from "rxjs/Subject";
 
-import { startOfDay, endOfDay, subDays, endOfMonth, addHours, addDays, isSameMonth, isSameDay } from 'date-fns';
+import {
+  startOfDay,
+  endOfDay,
+  subDays,
+  endOfMonth,
+  addHours,
+  addDays,
+  isSameMonth,
+  isSameDay
+} from "date-fns";
 
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/filter';
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/filter";
 
 export class CustomDateFormatter extends CalendarDateFormatter {
-
-  public monthViewColumnHeader({date, locale}: DateFormatterParams): string {
-    return new Intl.DateTimeFormat(locale, {weekday: 'short'}).format(date);
+  public monthViewColumnHeader({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, { weekday: "short" }).format(date);
   }
 }
 
 export const colors: any = {
   red: {
-    primary: '#e74a25',
-    secondary: '#FAE3E3'
+    primary: "#e74a25",
+    secondary: "#FAE3E3"
   },
   blue: {
-    primary: '#00bbd9',
-    secondary: '#D1E8FF'
+    primary: "#00bbd9",
+    secondary: "#D1E8FF"
   },
   yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
+    primary: "#e3bc08",
+    secondary: "#FDF1BA"
   },
   green: {
-    primary: '#2ecc71',
-    secondary: '#b1fdcf'
+    primary: "#2ecc71",
+    secondary: "#b1fdcf"
   }
 };
 
 @Component({
-  selector: 'app-attendance',
-  templateUrl: './attendance.component.html',
-  styleUrls: ['./attendance.component.scss',
-  '../../../../../node_modules/angular-calendar/css/angular-calendar.css'
-],
+  selector: "app-attendance",
+  templateUrl: "./attendance.component.html",
+  styleUrls: [
+    "./attendance.component.scss",
+    "../../../../../node_modules/angular-calendar/css/angular-calendar.css"
+  ],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
@@ -58,12 +72,13 @@ export const colors: any = {
   ]
 })
 export class AttendanceComponent implements OnInit {
-
+  locale: any;
+  viewDateChange: any;
   items = [];
-  public view = 'month';
+  public view = "month";
   viewDate: Date = new Date();
   isChecked = true;
-  public colorOption = ['red', 'blue', 'yellow', 'green'];
+  public colorOption = ["red", "blue", "yellow", "green"];
 
   // public actions: CalendarEventAction[] = [
   //   {
@@ -143,11 +158,14 @@ export class AttendanceComponent implements OnInit {
   //   }
   // ];
 
-  
   public activeDayIsOpen = true;
   refresh: Subject<any> = new Subject();
 
-  eventDropped({event, newStart, newEnd}: CalendarEventTimesChangedEvent): void {
+  eventDropped({
+    event,
+    newStart,
+    newEnd
+  }: CalendarEventTimesChangedEvent): void {
     const externalIndex: number = this.externalEvents.indexOf(event);
     if (externalIndex > -1) {
       if (!this.isChecked) {
@@ -164,8 +182,6 @@ export class AttendanceComponent implements OnInit {
     this.activeDayIsOpen = true;
   }
 
-
-
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
@@ -180,21 +196,20 @@ export class AttendanceComponent implements OnInit {
     }
   }
 
+  constructor() {}
 
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onAdd(event) {
-    const color = this.colorOption[Math.floor(Math.random() * this.colorOption.length)];
+    const color = this.colorOption[
+      Math.floor(Math.random() * this.colorOption.length)
+    ];
     this.externalEvents.push({
       title: event.value,
       start: startOfDay(new Date()),
       end: endOfDay(new Date()),
       color: colors[color],
-      draggable: true,
+      draggable: true
       // actions: this.actions
     });
     this.refresh.next();
@@ -204,16 +219,12 @@ export class AttendanceComponent implements OnInit {
     this.isChecked = !this.isChecked;
   }
 
-  lookup( date ) {
+  lookup(date) {
     for (let i = 0, len = this.externalEvents.length; i < len; i++) {
-      if ( this.externalEvents[ i ] === date ) {
+      if (this.externalEvents[i] === date) {
         return true;
       }
     }
     return false;
   }
-
-
-  
-
 }

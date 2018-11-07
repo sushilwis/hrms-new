@@ -1,4 +1,9 @@
-import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewEncapsulation
+} from "@angular/core";
 
 import {
   CalendarEvent,
@@ -6,47 +11,56 @@ import {
   CalendarEventAction,
   CalendarDateFormatter,
   DateFormatterParams
-} from 'angular-calendar';
+} from "angular-calendar";
 
-import { Subject } from 'rxjs/Subject';
+import { Subject } from "rxjs/Subject";
 
-import { startOfDay, endOfDay, subDays, endOfMonth, addHours, addDays, isSameMonth, isSameDay } from 'date-fns';
+import {
+  startOfDay,
+  endOfDay,
+  subDays,
+  endOfMonth,
+  addHours,
+  addDays,
+  isSameMonth,
+  isSameDay
+} from "date-fns";
 
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/filter';
+import "rxjs/add/observable/of";
+import "rxjs/add/operator/filter";
 
 export class CustomDateFormatter extends CalendarDateFormatter {
-
-  public monthViewColumnHeader({date, locale}: DateFormatterParams): string {
-    return new Intl.DateTimeFormat(locale, {weekday: 'short'}).format(date);
+  public monthViewColumnHeader({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, { weekday: "short" }).format(date);
   }
 }
 
 export const colors: any = {
   red: {
-    primary: '#e74a25',
-    secondary: '#FAE3E3'
+    primary: "#e74a25",
+    secondary: "#FAE3E3"
   },
   blue: {
-    primary: '#00bbd9',
-    secondary: '#D1E8FF'
+    primary: "#00bbd9",
+    secondary: "#D1E8FF"
   },
   yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
+    primary: "#e3bc08",
+    secondary: "#FDF1BA"
   },
   green: {
-    primary: '#2ecc71',
-    secondary: '#b1fdcf'
+    primary: "#2ecc71",
+    secondary: "#b1fdcf"
   }
 };
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss',
-  '../../../../../node_modules/angular-calendar/css/angular-calendar.css'
-],
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: [
+    "./home.component.scss",
+    "../../../../../node_modules/angular-calendar/css/angular-calendar.css"
+  ],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
@@ -56,15 +70,15 @@ export const colors: any = {
     }
   ]
 })
-
-export class HomeComponent implements OnInit {  
+export class HomeComponent implements OnInit {
   // events: any;
   items = [];
-  public view = 'month';
+  public view = "month";
   viewDate: Date = new Date();
   isChecked = true;
-  public colorOption = ['red', 'blue', 'yellow', 'green'];
-
+  public colorOption = ["red", "blue", "yellow", "green"];
+  locale: any;
+  viewDateChange: any;
 
   // public actions: CalendarEventAction[] = [
   //   {
@@ -75,8 +89,7 @@ export class HomeComponent implements OnInit {
   //   }
   // ];
 
-
-  // externalEvents: CalendarEvent[] = 
+  // externalEvents: CalendarEvent[] =
   // [
   //   {
   //     title: 'My Event One',
@@ -112,8 +125,6 @@ export class HomeComponent implements OnInit {
   //   }
   // ];
 
-
-
   // events: CalendarEvent[] = [
   //   {
   //     start: subDays(startOfDay(new Date()), 1),
@@ -148,11 +159,8 @@ export class HomeComponent implements OnInit {
   //   }
   // ];
 
-  
   public activeDayIsOpen = true;
   refresh: Subject<any> = new Subject();
-
-
 
   // eventDropped({event, newStart, newEnd}: CalendarEventTimesChangedEvent): void {
   //   const externalIndex: number = this.externalEvents.indexOf(event);
@@ -171,9 +179,6 @@ export class HomeComponent implements OnInit {
   //   this.activeDayIsOpen = true;
   // }
 
-
-
-
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
@@ -189,15 +194,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  constructor() {}
 
-
-  constructor() { }
-
-  ngOnInit() {
-
-  }
-
-
+  ngOnInit() {}
 
   // onAdd(event) {
   //   const color = this.colorOption[Math.floor(Math.random() * this.colorOption.length)];
@@ -212,15 +211,9 @@ export class HomeComponent implements OnInit {
   //   this.refresh.next();
   // }
 
-
-
-
   setEvent() {
     this.isChecked = !this.isChecked;
   }
-
-
-  
 
   // lookup( date ) {
   //   for (let i = 0, len = this.externalEvents.length; i < len; i++) {
@@ -230,8 +223,4 @@ export class HomeComponent implements OnInit {
   //   }
   //   return false;
   // }
-
-
-  
-
 }

@@ -1,21 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-task-requests',
-  templateUrl: './task-requests.component.html',
-  styleUrls: ['./task-requests.component.scss']
+  selector: "app-task-requests",
+  templateUrl: "./task-requests.component.html",
+  styleUrls: ["./task-requests.component.scss"]
 })
 export class TaskRequestsComponent implements OnInit {
-
+  filterQuery: any;
   public rows = [
-    {status: 'Aproved'},
-    {status: 'Aproved'},
-    {status: 'Aproved'}
+    { status: "Aproved" },
+    { status: "Aproved" },
+    { status: "Aproved" }
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
