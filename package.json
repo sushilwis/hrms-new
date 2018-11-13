@@ -2,13 +2,18 @@
   "name": "able-pro",
   "version": "0.0.0",
   "license": "MIT",
+    "engines": {
+    "node": "10.0.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
